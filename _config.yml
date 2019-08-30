@@ -30,8 +30,10 @@ paginate: 20
 paginate_path: /page:num/
 
 # Build settings
-# theme: jekyll-theme-so-simple
-theme: minima
+theme: jekyll-theme-so-simple
+remote_theme: mmistakes/so-simple-theme
+# theme: minima
+
 plugins:
   - jekyll-feed
 
