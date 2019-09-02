@@ -6,6 +6,10 @@ author: topolog
 layout: post
 guid: https://dmtopolog.com/?p=36
 permalink: /stranger-things-with-core-data-stacks-comparison/
+image:
+  path: images-posts/2018-09-10-stranger-things-with-core-data-stacks-comparison/hero-2000.jpg
+  thumbnail: images-posts/2018-09-10-stranger-things-with-core-data-stacks-comparison/hero-600.jpg
+  caption: Photo by Puneeth Shetty on Unsplash
 categories:
   - Tech Blog
 tags:
@@ -20,7 +24,7 @@ tags:
   Here are the most common stacks:
 </p>
 
-<img class="alignnone wp-image-37" src="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?resize=688%2C259&#038;ssl=1" alt="" width="688" height="259" srcset="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?resize=300%2C113&ssl=1 300w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?resize=768%2C288&ssl=1 768w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?resize=1024%2C384&ssl=1 1024w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?w=1600&ssl=1 1600w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?w=1376&ssl=1 1376w" sizes="(max-width: 688px) 100vw, 688px" data-recalc-dims="1" /> 
+<img class="alignnone wp-image-37" src="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?resize=688%2C259&#038;ssl=1" alt="" width="688" height="259" srcset="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?resize=300%2C113&ssl=1 300w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?resize=768%2C288&ssl=1 768w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?resize=1024%2C384&ssl=1 1024w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?w=1600&ssl=1 1600w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-all-together.png?w=1376&ssl=1 1376w" sizes="(max-width: 688px) 100vw, 688px" data-recalc-dims="1" />
 
 <p id="bc85" class="graf graf--p graf-after--figure">
   There were several different experiments and several points of view about which one is better. Some people including Marcus Zarra promoted Nested Contexts as the best option for all cases. Florian Kugler from ObjC.io in his famous post “Concurrent core data stacks — performance shootout” back to 2013 measured performance and compared Nested Contexts with classical Shared Coordinator stack (his entire blog is no longer exists at <a class="markup--anchor markup--p-anchor" href="http://floriankugler.com/blog," target="_blank" rel="noopener nofollow" data-href="http://floriankugler.com/blog,">http://floriankugler.com/blog,</a> but you can still find that article in some internet cache). He developed that investigation and his Core Data book stated again that Shared Coordinator is the most suitable approach, because it doesn’t affect the main thread as much as Nested Contexts model does.
@@ -78,7 +82,7 @@ tags:
   Here is my result:
 </p>
 
-<img class="alignnone wp-image-39" src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?resize=688%2C472&#038;ssl=1" alt="" width="688" height="472" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?resize=300%2C206&ssl=1 300w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?resize=768%2C528&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?resize=1024%2C703&ssl=1 1024w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?w=1450&ssl=1 1450w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?w=1376&ssl=1 1376w" sizes="(max-width: 688px) 100vw, 688px" data-recalc-dims="1" /> 
+<img class="alignnone wp-image-39" src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?resize=688%2C472&#038;ssl=1" alt="" width="688" height="472" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?resize=300%2C206&ssl=1 300w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?resize=768%2C528&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?resize=1024%2C703&ssl=1 1024w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?w=1450&ssl=1 1450w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/10/Stacks-Performance-Table-2.png?w=1376&ssl=1 1376w" sizes="(max-width: 688px) 100vw, 688px" data-recalc-dims="1" />
 
 <p id="b17a" class="graf graf--p graf-after--figure">
   Basically everything is clear:

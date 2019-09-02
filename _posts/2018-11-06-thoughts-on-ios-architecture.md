@@ -6,7 +6,10 @@ author: topolog
 layout: post
 guid: https://dmtopolog.com/?p=117
 permalink: /thoughts-on-ios-architecture/
-image: /wp-content/uploads/2018/11/AppleDoc_threeLayers.png
+image:
+  path: images-posts/2018-11-06-thoughts-on-ios-architecture/lance-anderson-QdAAasrZhdk-unsplash-2000.jpg
+  thumbnail: images-posts/2018-11-06-thoughts-on-ios-architecture/lance-anderson-QdAAasrZhdk-unsplash-600.jpg
+  caption: Photo by Lance Anderson on Unsplash
 categories:
   - Tech Blog
 tags:
@@ -26,7 +29,7 @@ High-level patterns may consist of low-level ones and MVC is a good example of i
 
 > Model-View-Controller is a design pattern that is composed of several more basic design patterns.
 
-<img class=" wp-image-118 aligncenter" src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=651%2C243&#038;ssl=1" alt="" width="651" height="243" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=300%2C112&ssl=1 300w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=768%2C286&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=1024%2C382&ssl=1 1024w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=1600%2C596&ssl=1 1600w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?w=1376&ssl=1 1376w" sizes="(max-width: 651px) 100vw, 651px" data-recalc-dims="1" /> 
+<img class=" wp-image-118 aligncenter" src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=651%2C243&#038;ssl=1" alt="" width="651" height="243" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=300%2C112&ssl=1 300w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=768%2C286&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=1024%2C382&ssl=1 1024w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?resize=1600%2C596&ssl=1 1600w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_MVC_lowLewelPatterns.png?w=1376&ssl=1 1376w" sizes="(max-width: 651px) 100vw, 651px" data-recalc-dims="1" />
 
 If we consider that **pattern** is _a general, reusable solution to a commonly occurring problem within a given context,_ for low-level ones the problem and the context vary from one pattern to another. Some of them are about creating the objects, the others reveal some structural or behavioural peculiarities. But high-level patterns usually solve generally the same problem in different ways: how to design the system. However the context can be slightly different: an application, a service, a module, a screen.
 
@@ -84,12 +87,12 @@ _(I chose the quote from Bible at the beginning of this paragraph because someti
 First of all let&#8217;s try to guess how Apple means to use MVC in the real apps. Here are two quotes from the documentation:
 
 > It is a high-level pattern in that it concerns itself with the global architecture of an application and classifies objects according to the general roles they play in an application.
-> 
+>
 > The MVC design pattern considers there to be three types of objects: model objects, view objects, and controller objects. The MVC pattern defines the roles that these types of objects play in the application and their lines of communication.
 
 For me it seems that MVC should be used in the context of the entire app and not in the context of one screen. Here is the picture from one of the Apple documentation pages:
 
-<img class="wp-image-119 aligncenter" src="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?resize=608%2C363&#038;ssl=1" alt="" width="608" height="363" srcset="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?resize=300%2C179&ssl=1 300w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?resize=768%2C458&ssl=1 768w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?resize=1024%2C611&ssl=1 1024w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?w=1032&ssl=1 1032w" sizes="(max-width: 608px) 100vw, 608px" data-recalc-dims="1" /> 
+<img class="wp-image-119 aligncenter" src="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?resize=608%2C363&#038;ssl=1" alt="" width="608" height="363" srcset="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?resize=300%2C179&ssl=1 300w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?resize=768%2C458&ssl=1 768w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?resize=1024%2C611&ssl=1 1024w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2018/11/AppleDoc_threeLayers.png?w=1032&ssl=1 1032w" sizes="(max-width: 608px) 100vw, 608px" data-recalc-dims="1" />
 
 So the other point of that logical chain &#8211; \`Every module (screen) should be build with MVC in mind\` &#8211; is not so true as well.
 
@@ -97,7 +100,7 @@ You can see that **Model/View/Controller** are layers inside the app, not object
 
 Let&#8217;s change the scheme just a bit so it looks like that:
 
-<img class="alignnone wp-image-150" src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=688%2C252&#038;ssl=1" alt="" width="688" height="252" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=300%2C110&ssl=1 300w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=768%2C283&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=1024%2C377&ssl=1 1024w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=1600%2C589&ssl=1 1600w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?w=1376&ssl=1 1376w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?w=2064&ssl=1 2064w" sizes="(max-width: 688px) 100vw, 688px" data-recalc-dims="1" /> 
+<img class="alignnone wp-image-150" src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=688%2C252&#038;ssl=1" alt="" width="688" height="252" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=300%2C110&ssl=1 300w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=768%2C283&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=1024%2C377&ssl=1 1024w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?resize=1600%2C589&ssl=1 1600w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?w=1376&ssl=1 1376w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/DiffernetMVC.png?w=2064&ssl=1 2064w" sizes="(max-width: 688px) 100vw, 688px" data-recalc-dims="1" />
 
 If you look at MVC from this point of view you can see how it aligns with Uncle Bob&#8217;s architectural layers. So you can apply most of the Clean Architecture principles here:
 
@@ -116,7 +119,7 @@ The other one can say, we still can consider the screen as an MVC module.UIViewC
 
 Both these approaches to view controllers give you enough freedom to write properly structured dumb view controllers without much logic so you can keep it small and clean. But the idea of higher level MVC is the same.
 
-### 
+###
 
 ### Layers constitution
 
@@ -124,13 +127,13 @@ So as we can see, **MVC is broken**-complaint usually comes when the speaker con
 
 If your application is big enough (otherwise you happily use some MVVM and has already stopped reading this) you will notice that your layers are huge. You might have hundreds and thousands classes which are considered as parts of one layer and that&#8217;s totally ok. It doesn&#8217;t mean your presenting or business layer should be a big bowl of spaghetti, it doesn&#8217;t mean the classes inside it should be tightly coupled to one another and violate the rest of the basic OOP principles. No. Just zoom in! Go to a bit deeper level of abstraction.
 
-<img class="wp-image-120 aligncenter" src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=383%2C497&#038;ssl=1" alt="" width="383" height="497" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=231%2C300&ssl=1 231w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=768%2C998&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=788%2C1024&ssl=1 788w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=1600%2C2079&ssl=1 1600w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?w=1376&ssl=1 1376w" sizes="(max-width: 383px) 100vw, 383px" data-recalc-dims="1" /> 
+<img class="wp-image-120 aligncenter" src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=383%2C497&#038;ssl=1" alt="" width="383" height="497" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=231%2C300&ssl=1 231w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=768%2C998&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=788%2C1024&ssl=1 788w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?resize=1600%2C2079&ssl=1 1600w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2018/11/Layers_zoomIn.png?w=1376&ssl=1 1376w" sizes="(max-width: 383px) 100vw, 383px" data-recalc-dims="1" />
 
 Of course it&#8217;s better to design some clear contracts and strict APIs between the layers. Don&#8217;t forget about Clean Architecture principles. But other than that you can consider your layers as kind of a separate systems.
 
 Because of the UI-centric approach to the architecture we have plenty of options for the UI layer architecture, but not so much guidelines about our business logic. With core layer there are less questions as core components suppose to be incapsulated independent modules with their own APIs.
 
-<img class="wp-image-121 aligncenter" src="https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=489%2C189&#038;ssl=1" alt="" width="489" height="189" srcset="https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=300%2C116&ssl=1 300w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=768%2C297&ssl=1 768w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=1024%2C396&ssl=1 1024w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=1600%2C619&ssl=1 1600w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?w=1376&ssl=1 1376w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?w=2064&ssl=1 2064w" sizes="(max-width: 489px) 100vw, 489px" data-recalc-dims="1" /> 
+<img class="wp-image-121 aligncenter" src="https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=489%2C189&#038;ssl=1" alt="" width="489" height="189" srcset="https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=300%2C116&ssl=1 300w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=768%2C297&ssl=1 768w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=1024%2C396&ssl=1 1024w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?resize=1600%2C619&ssl=1 1600w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?w=1376&ssl=1 1376w, https://i2.wp.com/dmtopolog.com/wp-content/uploads/2018/11/LayersAndCorrespondingPatterns.png?w=2064&ssl=1 2064w" sizes="(max-width: 489px) 100vw, 489px" data-recalc-dims="1" />
 
 Regarding business logic architecture in iOS I&#8217;m aware of just one approach &#8211; SOA ([Service Oriented Architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)).&nbsp; There are some variations of it for iOS, but basically it says that your business logic is the set of services responsible for specific types of models and operations under these models. Services should be UI independent so it will be easier to reuse them. Then there are some variations about how to deal with the state in the services and whether they can depends from one another. But briefly that&#8217;s the idea.
 

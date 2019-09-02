@@ -7,8 +7,8 @@ layout: post
 guid: https://dmtopolog.com/?p=236
 permalink: /siri-intents/
 image:
-  path: ⁨images-posts/2019-02-18-siri-intents/siri-logo.jpg
-  thumbnail: images-posts/2019-02-18-siri-intents/siri-logo.jpg
+  path: ⁨images-posts/2019-02-18-siri-intents/siri-logo-1920.jpg
+  thumbnail: images-posts/2019-02-18-siri-intents/siri-logo-600.jpg
 categories:
   - Tech Blog
 tags:

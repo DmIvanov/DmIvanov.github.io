@@ -6,7 +6,10 @@ author: topolog
 layout: post
 guid: https://dmtopolog.com/?p=167
 permalink: /code-optimization-for-swift-and-objective-c/
-image: /wp-content/uploads/2018/12/clang_pipeline.png
+image:
+  path: images-posts/2018-12-02-code-optimization-for-swift-and-objective-c/tammy-gann-MSadqTz1TxM-unsplash-2000.jpg
+  thumbnail: images-posts/2018-12-02-code-optimization-for-swift-and-objective-c/tammy-gann-MSadqTz1TxM-unsplash-600.jpg
+  caption: Photo by Tammy Gann on Unsplash
 categories:
   - Tech Blog
 tags:

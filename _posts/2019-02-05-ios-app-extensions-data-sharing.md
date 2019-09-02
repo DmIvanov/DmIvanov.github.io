@@ -7,8 +7,8 @@ layout: post
 guid: https://dmtopolog.com/?p=260
 permalink: /ios-app-extensions-data-sharing/
 image:
-  path: images-posts/2019-02-05-ios-app-extensions-data-sharing/CordExtension-1024x665.jpg
-  thumbnail: images-posts/2019-02-05-ios-app-extensions-data-sharing/CordExtension-768x499.jpg
+  path: images-posts/2019-02-05-ios-app-extensions-data-sharing/CordExtension-2000.jpg
+  thumbnail: images-posts/2019-02-05-ios-app-extensions-data-sharing/CordExtension-600.jpg
 categories:
   - Tech Blog
 tags:

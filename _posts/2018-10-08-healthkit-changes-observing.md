@@ -6,6 +6,10 @@ author: topolog
 layout: post
 guid: http://dmtopolog.com/?p=13
 permalink: /healthkit-changes-observing/
+image:
+  path: images-posts/2018-10-08-healthkit-changes-observing/pierre-bamin-JENl7UuZwxE-unsplash-2000.jpg
+  thumbnail: images-posts/2018-10-08-healthkit-changes-observing/pierre-bamin-JENl7UuZwxE-unsplash-600.jpg
+  caption: Photo by Pierre Bamin on Unsplash
 categories:
   - Tech Blog
 tags:
@@ -37,7 +41,7 @@ func startObserving() {
 		predicate: nil) { [weak self] (query, completion, error) in
 			self?.bodyMassObserverQueryTriggered()
 	}
-	
+
 	hkStore.execute(bodyMassObserverQuery!)
 }
 
@@ -132,7 +136,7 @@ func retrieveAnchor() -&gt; HKQueryAnchor? {
     }
 }</pre>
 
-#### 
+####
 
 #### **HKAnchoredObjectQuery needs no help**
 

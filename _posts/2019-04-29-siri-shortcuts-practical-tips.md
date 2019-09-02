@@ -7,8 +7,8 @@ layout: post
 guid: https://dmtopolog.com/?p=317
 permalink: /siri-shortcuts-practical-tips/
 image:
-  path: images-posts/2019-04-29-siri-shortcuts-practical-tips/sergio-souza-1490084-unsplash.jpg
-  thumbnail: images-posts/2019-04-29-siri-shortcuts-practical-tips/sergio-souza-1490084-unsplash.jpg
+  path: images-posts/2019-04-29-siri-shortcuts-practical-tips/sergio-souza-1490084-unsplash-1400.jpg
+  thumbnail: images-posts/2019-04-29-siri-shortcuts-practical-tips/sergio-souza-1490084-unsplash-600.jpg
 categories:
   - Tech Blog
 tags:

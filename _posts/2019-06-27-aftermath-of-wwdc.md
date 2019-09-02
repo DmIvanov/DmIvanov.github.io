@@ -7,8 +7,8 @@ layout: post
 guid: https://dmtopolog.com/?p=350
 permalink: /aftermath-of-wwdc/
 image:
-  path: images-posts/2019-06-27-aftermath-of-wwdc/river.png
-  thumbnail: images-posts/2019-06-27-aftermath-of-wwdc/River-768x355.png
+  path: images-posts/2019-06-27-aftermath-of-wwdc/river-1480.png
+  thumbnail: images-posts/2019-06-27-aftermath-of-wwdc/river-600.png
 categories:
   - Tech Blog
 tags:

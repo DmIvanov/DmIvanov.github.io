@@ -7,8 +7,8 @@ layout: post
 guid: https://dmtopolog.com/?p=286
 permalink: /serialisation-of-enum-with-associated-type/
 image:
-  path: ⁨images-posts/2019-03-20-serialisation-of-enum-with-associated-type/IMGP3601.jpg
-  thumbnail: images-posts/2019-03-20-serialisation-of-enum-with-associated-type/IMGP3601-768x511.jpg
+  path: ⁨images-posts/2019-03-20-serialisation-of-enum-with-associated-type/IMGP3601-1200.jpg
+  thumbnail: images-posts/2019-03-20-serialisation-of-enum-with-associated-type/IMGP3601-600.jpg
 categories:
   - Tech Blog
 tags:

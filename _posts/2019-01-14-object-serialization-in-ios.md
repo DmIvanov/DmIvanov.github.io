@@ -6,7 +6,9 @@ author: topolog
 layout: post
 guid: https://dmtopolog.com/?p=194
 permalink: /object-serialization-in-ios/
-image: /wp-content/uploads/2019/01/floppy_disks_2.jpg
+image:
+  path: images-posts/2019-01-14-object-serialization-in-ios/floppy_disks-1600.jpg
+  thumbnail: images-posts/2019-01-14-object-serialization-in-ios/floppy_disks-600.jpg
 categories:
   - Tech Blog
 tags:
@@ -69,7 +71,7 @@ Let&#8217;s take a look at the most popular formats and different ways of handli
 <div style="height:105px" aria-hidden="true" class="wp-block-spacer">
 </div>
 
-## NSCoding 
+## NSCoding
 
 NSCoding is lightweight ObjC protocol with two methods: `-initWithCoder:` and `encodeWithCoder:` which has been around since iOS 2. Your custom classes implement it to be ready for serialization/deserialization. Inside the implementation of this methods you specify how different properties of your object (the values inside these properties) are being encoded into some kind of key-value container. You describe how your object supposed to be transferred into key-value pairs.&nbsp;Eventually some coder will serialise this container to binary data.
 
@@ -96,7 +98,7 @@ Another flaw of this protocol from Swift&#8217;s perspective is its type dynamis
   <p>
     NSCoder is an abstract class that serves as the basis for objects that enable archiving and distribution of other objects. NSCoder operates on objects, scalars, C arrays, structures, and strings, and on pointers to these types.
   </p>
-  
+
   <cite>https://developer.apple.com/documentation/foundation/nscoder</cite>
 </blockquote>
 
@@ -149,7 +151,7 @@ The most popular format nowadays is JSON. Up to iOS 5/macOS 10.7 Foundation didn
 
 In iOS serialization chain for encoding your custom objects to JSON data looks like this:<figure class="wp-block-image">
 
-<img src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?fit=688%2C91&ssl=1" alt="" class="wp-image-205" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?w=1383&ssl=1 1383w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?resize=300%2C40&ssl=1 300w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?resize=768%2C102&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?resize=1024%2C135&ssl=1 1024w" sizes="(max-width: 688px) 100vw, 688px" /> </figure> 
+<img src="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?fit=688%2C91&ssl=1" alt="" class="wp-image-205" srcset="https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?w=1383&ssl=1 1383w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?resize=300%2C40&ssl=1 300w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?resize=768%2C102&ssl=1 768w, https://i0.wp.com/dmtopolog.com/wp-content/uploads/2019/01/ObjectToJSON.png?resize=1024%2C135&ssl=1 1024w" sizes="(max-width: 688px) 100vw, 688px" /> </figure>
 
 NSJSONSerialization offers only the second part &#8211; serialization from NSDictionaty/NSArray to JSON, so you still need to do the mapping from your custom object to NSDictionary. The class is straightforward and supposed to be used like this:
 
@@ -289,7 +291,7 @@ I did [a trivial benchmark](https://gist.github.com/DmIvanov/ead75141ebb6dc24b58
 
 Here are the results:<figure class="wp-block-image">
 
-<img src="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?fit=688%2C503&ssl=1" alt="" class="wp-image-208" srcset="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?w=1590&ssl=1 1590w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?resize=300%2C219&ssl=1 300w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?resize=768%2C561&ssl=1 768w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?resize=1024%2C748&ssl=1 1024w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?w=1376&ssl=1 1376w" sizes="(max-width: 688px) 100vw, 688px" /> </figure> 
+<img src="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?fit=688%2C503&ssl=1" alt="" class="wp-image-208" srcset="https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?w=1590&ssl=1 1590w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?resize=300%2C219&ssl=1 300w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?resize=768%2C561&ssl=1 768w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?resize=1024%2C748&ssl=1 1024w, https://i1.wp.com/dmtopolog.com/wp-content/uploads/2019/01/serialization_benchmark_chart.png?w=1376&ssl=1 1376w" sizes="(max-width: 688px) 100vw, 688px" /> </figure>
 
 **Serialization in Swift.&nbsp;**
 
@@ -306,7 +308,7 @@ Here are the results:<figure class="wp-block-image">
 **Comparing Swift and ObjC:**
 
   * I put JSON/Plist serialization for ObjC and Swift next to each other to show how big is encoding work of Codable implementation (the difference between the ObjC and Swift bars for each type) and how fast is actual work of ObjC serialisers (which is common for both languages)
-  * Check out NSKeyedArchiver: It&#8217;s not surprising that Swift is slower here as well, keyed archiver is completely an ObjC API. 
+  * Check out NSKeyedArchiver: It&#8217;s not surprising that Swift is slower here as well, keyed archiver is completely an ObjC API.
 
 <div style="height:105px" aria-hidden="true" class="wp-block-spacer">
 </div>

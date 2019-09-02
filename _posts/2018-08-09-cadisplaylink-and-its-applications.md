@@ -7,6 +7,9 @@ layout: post
 guid: https://dmtopolog.com/?p=76
 permalink: /cadisplaylink-and-its-applications/
 image:
+  path: images-posts/2018-08-09-cadisplaylink-and-its-applications/timon-studler-QL-Rkbgb8HE-unsplash-600.jpg
+  thumbnail: images-posts/2018-08-09-cadisplaylink-and-its-applications/timon-studler-QL-Rkbgb8HE-unsplash-2000.jpg
+  caption: Photo by Timon Studler on Unsplash
 categories:
   - Tech Blog
 tags:

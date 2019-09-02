@@ -7,8 +7,8 @@ layout: post
 guid: https://dmtopolog.com/?p=368
 permalink: /property-wrappers/
 image:
-  path: ⁨images-posts/2019-08-04-property-wrappers/boxes.jpg
-  thumbnail: images-posts/2019-08-04-property-wrappers/boxes-768x513.jpg
+  path: images-posts/2019-08-04-property-wrappers/boxes-2000.jpg
+  thumbnail: images-posts/2019-08-04-property-wrappers/boxes-600.jpg
 categories:
   - Tech Blog
 tags:
