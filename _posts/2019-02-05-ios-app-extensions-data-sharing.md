@@ -1,19 +1,15 @@
 ---
-id: 260
 title: 'iOS App Extensions: Data Sharing'
-date: 2019-02-05T07:19:26-02:00
+date: 2019-02-05
 author: topolog
 layout: post
-guid: https://dmtopolog.com/?p=260
 permalink: /ios-app-extensions-data-sharing/
 image:
   path: images-posts/2019-02-05-ios-app-extensions-data-sharing/CordExtension-2000.jpg
   thumbnail: images-posts/2019-02-05-ios-app-extensions-data-sharing/CordExtension-600.jpg
-categories:
-  - Tech Blog
 tags:
-  - AppExtension
-  - DataSharing
+  - app extension
+  - data sharing
   - iOS
 ---
 
@@ -104,7 +100,7 @@ Here is an example of using shared container to instantiate NSManagedContext bac
 
 ```swift
 extension NSManagedObjectContext {
-    
+
     static func mainContextForSharedStorage() -> NSManagedObjectContext {
         let context = NSManagedObjectContext(
           concurrencyType: .mainQueueConcurrencyType
@@ -112,7 +108,7 @@ extension NSManagedObjectContext {
         context.persistentStoreCoordinator = persistentStoreCoordinator()
         return context
     }
-    
+
     static func persistentStoreCoordinator() -> NSPersistentStoreCoordinator? {
         let conteinerURL = FileManager.sharedContainerURL()
         let storeFileURL = conteinerURL.appendingPathComponent("myFileNmae.sqlite")
@@ -165,3 +161,8 @@ You can share Keychain access more or less the same way as you share User Defaul
 You can also access shared iCloud if you are brave enough 😉 You can check out Lister sample app published by Apple (for some reason the app was removed from the Apple samples directory and now you can only find it in [some mirrors on GitHub](https://github.com/RommelTJ/Lister))
 
 _More about data sharing in [_official documentation_](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW1﻿) and [WWDC 2015 App Extension Best Practices video](https://developer.apple.com/videos/play/wwdc2015/224/)
+
+&nbsp;
+
+---
+I hope you enjoyed this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

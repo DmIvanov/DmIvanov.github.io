@@ -1,18 +1,15 @@
 ---
-id: 36
 title: Stranger things with Core Data Stacks comparison
-date: 2018-09-10T17:29:49-02:00
+date: 2018-09-10
 author: topolog
 layout: post
-guid: https://dmtopolog.com/?p=36
 permalink: /stranger-things-with-core-data-stacks-comparison/
 image:
   path: images-posts/2018-09-10-stranger-things-with-core-data-stacks-comparison/hero-2000.jpg
   thumbnail: images-posts/2018-09-10-stranger-things-with-core-data-stacks-comparison/hero-600.jpg
   caption: Photo by Puneeth Shetty on Unsplash
-categories:
-  - Tech Blog
 tags:
+  - data storing
   - CoreData
   - iOS
 
@@ -66,3 +63,8 @@ After couple of days full of thoughts and experiments a gave up, and decided to 
 ([Here is the setup I worked with](https://github.com/DmIvanov/CoreDataStacks))
 
 You can get some more insights into Core Data stacks, their differences and some experience migrating from one stack to another from [my presentation at CocoaHeadsNL](https://youtu.be/BF9DD8XXxaI)
+
+&nbsp;
+
+---
+I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

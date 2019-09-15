@@ -1,17 +1,13 @@
 ---
-id: 13
 title: HealthKit changes observing
-date: 2018-10-08T19:34:38-02:00
+date: 2018-10-08
 author: topolog
 layout: post
-guid: http://dmtopolog.com/?p=13
 permalink: /healthkit-changes-observing/
 image:
   path: images-posts/2018-10-08-healthkit-changes-observing/pierre-bamin-JENl7UuZwxE-unsplash-2000.jpg
   thumbnail: images-posts/2018-10-08-healthkit-changes-observing/pierre-bamin-JENl7UuZwxE-unsplash-600.jpg
   caption: Photo by Pierre Bamin on Unsplash
-categories:
-  - Tech Blog
 tags:
   - HealthKit
   - iOS
@@ -164,3 +160,8 @@ If you omit setting the `updateHandler` the query just triggers the `resultsHand
 And one more quote from the documentation:
 
 > Often, it is more efficient to setup and run a single anchored object query, then to run separate sample and observer queries.
+
+&nbsp;
+
+---
+I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

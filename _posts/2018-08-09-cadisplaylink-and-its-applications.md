@@ -1,19 +1,14 @@
 ---
-id: 76
 title: CADisplayLink and its applications
-date: 2018-08-09T08:15:04-02:00
-author: topolog
+date: 2018-08-09
 layout: post
-guid: https://dmtopolog.com/?p=76
 permalink: /cadisplaylink-and-its-applications/
 image:
   path: images-posts/2018-08-09-cadisplaylink-and-its-applications/timon-studler-QL-Rkbgb8HE-unsplash-600.jpg
   thumbnail: images-posts/2018-08-09-cadisplaylink-and-its-applications/timon-studler-QL-Rkbgb8HE-unsplash-2000.jpg
   caption: Photo by Timon Studler on Unsplash
-categories:
-  - Tech Blog
 tags:
-  - Animation
+  - animation
   - iOS
   - UI
 ---
@@ -43,7 +38,7 @@ The main feature of _CADisplayLink_ is that it's synchronised with the display r
 
 Ok, callbacks for every frame.. what else can we do with _CADisplayLink_? Not so much, but there are something more.
 
-
+&nbsp;
 
 ### Frame juggling
 
@@ -75,7 +70,7 @@ This example depicts the situation where our calculation always takes more time 
 
 I created a sample project to show the difference between these types of frame calculation (with some artificial overhead): [sample project on GitHub](https://github.com/DmIvanov/Animations)
 
-
+&nbsp;
 
 ### Time-related properties
 
@@ -99,7 +94,9 @@ Some non-obvious things to keep in mind when dealing with _preferredFramesPerSe
 - If you set it to the value less then maximum for your device don't expect `duration` to change. It indicates the duration of one frame, not the time difference between your callback calls. So if you want to calculate the time difference from the previous call use `displaylink.targetTimestamp - displaylink.timestamp`
 - If you want to set it to 120 you might need to set `CADisableMinimumFrameDuration` key in your `info.plist` file (it was a temporary solution from Apple for iPad Pro, they promised that at some point everything would work by default)
 
-### invalidation
+&nbsp;
+
+### Invalidation
 
 For controlling the lifecycle of _CADisplayLink_ you have two options: temporary pause the link (stop it from firing your callback) and invalidate it completely.
 
@@ -110,7 +107,7 @@ displaylink.invalidate()
 
 It's important not to forget about invalidating the link when you don't need it anymore. Even if you don't do anything in the callback firing it 60 times per second is still a load on CPU, which eventually will affect the battery life of the device.
 
-
+&nbsp;
 
 ### Control over the long running calculation
 
@@ -129,7 +126,7 @@ One more useful trick when using _CADisplayLink_ is keeping an eye on the curr
 }
 ```
 
-
+&nbsp;
 
 ### How would one use CADisplayLink
 
@@ -147,3 +144,8 @@ _**Useful links:**_
 [https://developer.apple.com/documentation/metal/advanced\_command\_setup/cpu\_and\_gpu_synchronization](https://developer.apple.com/documentation/metal/advanced_command_setup/cpu_and_gpu_synchronization)  
 <https://developer.apple.com/library/archive/technotes/tn2460/_index.html> (CADisableMinimumFrameDuration key)  
 <https://github.com/DmIvanov/Animations> (my sample project)
+
+&nbsp;
+
+---
+I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

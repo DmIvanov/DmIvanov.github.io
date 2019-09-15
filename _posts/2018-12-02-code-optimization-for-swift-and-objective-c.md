@@ -1,10 +1,8 @@
 ---
-id: 167
 title: Compiler code optimization for Swift and Objective-C
-date: 2018-12-02T11:46:12-02:00
+date: 2018-12-02
 author: topolog
 layout: post
-guid: https://dmtopolog.com/?p=167
 permalink: /code-optimization-for-swift-and-objective-c/
 image:
   path: images-posts/2018-12-02-code-optimization-for-swift-and-objective-c/tammy-gann-MSadqTz1TxM-unsplash-2000.jpg
@@ -312,3 +310,8 @@ _**SIL:**_
 <a href="https://github.com/apple/swift/blob/master/docs/SIL.rst"><em> Documentation</em></a>
 <br>
 <a href="https://youtu.be/Ntj8ab-5cvE">Video: Joseph Groff & Chris Lattner Swift's High-Level IR</a>
+
+&nbsp;
+
+---
+I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

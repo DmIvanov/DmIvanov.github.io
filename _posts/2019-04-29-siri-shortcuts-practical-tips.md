@@ -1,20 +1,16 @@
 ---
-id: 317
 title: Siri Shortcuts Practical Tips
 date: 2019-04-29T06:18:57-02:00
 author: topolog
 layout: post
-guid: https://dmtopolog.com/?p=317
 permalink: /siri-shortcuts-practical-tips/
 image:
   path: images-posts/2019-04-29-siri-shortcuts-practical-tips/sergio-souza-1490084-unsplash-1400.jpg
   thumbnail: images-posts/2019-04-29-siri-shortcuts-practical-tips/sergio-souza-1490084-unsplash-600.jpg
-categories:
-  - Tech Blog
 tags:
   - iOS
   - Siri
-  - Tips
+  - tips
 ---
 Let’s say, you decided to implement a new platform feature in your app. You read the documentation, checked some tutorials and examples in the internet, you created a sample app and everything worked great. Then you started to integrate it into your existing production app, and here came all the fun.
 
@@ -114,15 +110,15 @@ public class OrderSoupIntentResponse: INIntentResponse {}
 
 That’s really awesome but you need to remember some nuances.
 
-**Watch your targets.** 
+**Watch your targets.**
 Depending on whether or not you use an internal framework for shared code you need to generate classes just for the framework or for you app and extension target.
 
-**Watch your targets.** 
+**Watch your targets.**
 If you decided to use an internal framework for you shared Siri-code you need to generate classes for the framework only. The other situation is if you decided to manually add classes to the extension’s target. This way you need to generate these Siri-related classes for the main target (to process opening the app from the extension) as well as for the extension itself.
 
 In some manuals you mind find that you need to add your intent classes to `info.plist` of your extension (NSExtension key), but current versions of XCode can handle it automatically adding and changing the classes for your intents (but not removing - you have to do it manually if needed).
 
-**Watch your language.** 
+**Watch your language.**
 The code can be generated in both Swift and ObjC. In main target’s _Build Settings -> Intent Class Generation Language_ you can see Swift, Objective-C and Automatic options. Automatic is set by default and for old ObjC-projects it will generate code in Objective-C. So you need to use them via If you prefer your Intent code to be in Swift you have to explicitly assign it.
 
 &nbsp;
@@ -219,3 +215,8 @@ It lets you to launch your extension target with predefined phrase to Siri, like
 
 ![](/images-posts/2019-04-29-siri-shortcuts-practical-tips/chose-siri.png)
 
+
+&nbsp;
+
+---
+I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

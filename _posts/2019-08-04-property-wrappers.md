@@ -1,15 +1,15 @@
 ---
-id: 368
 title: Property Wrappers
 date: 2019-08-04
 author: topolog
 layout: post
-guid: https://dmtopolog.com/?p=368
 permalink: /property-wrappers/
 image:
   path: images-posts/2019-08-04-property-wrappers/boxes-2000.jpg
   thumbnail: images-posts/2019-08-04-property-wrappers/boxes-600.jpg
-tags: [language feature, swift]
+tags:
+  - language feature
+  - swift
 ---
 
 In my opinion property wrappers are one of the most interesting features of SwiftUI and the upcoming Swift 5.1. Here I'll share what has caught my attention and what looks the most interesting about this brand new thingy.
@@ -134,3 +134,8 @@ var test: String
 There are some thoughts around about how much SwiftUI dictated the evolution of swift. Several features were rushed to be included into the language before Swift 5 release. Some of them were still not release on time (mostly because swift evolution process is not completely controlled by Apple), so when SwiftUI was presented they have not yet been parts of the language. So they were planned for Swift 5.1 and SwiftUI had to use them internally other then the built-in language features. These features being a general improvements to the language eventually empowered SwiftUI and the whole picture appeared from the separate pieces.
 
 The question what came first: property wrappers or SwiftUI may seem a bit naive. We see that there is quite a story behind this language feature and the (official) original motivation have nothing to do with SwiftUI. Moreover the discussion was started long before SwiftUI… But was it? There are also signs, evidences and replies from the members of the Swift Core Team that SwiftUI was under development years before the release at WWDC'19. Some even say the first research was started before Swift was released in 2014. So who knows whether or not we would have had property wrappers in the language if not SwiftUI.
+
+&nbsp;
+
+---
+I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

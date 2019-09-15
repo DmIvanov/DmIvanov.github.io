@@ -1,23 +1,19 @@
 ---
-id: 194
 title: Object serialization in iOS
-date: 2019-01-14T08:18:58-02:00
+date: 2019-01-14
 author: topolog
 layout: post
-guid: https://dmtopolog.com/?p=194
 permalink: /object-serialization-in-ios/
 image:
   path: images-posts/2019-01-14-object-serialization-in-ios/floppy_disks-1600.jpg
   thumbnail: images-posts/2019-01-14-object-serialization-in-ios/floppy_disks-600.jpg
-categories:
-  - Tech Blog
 tags:
   - Codable
   - iOS
   - JSON
   - NSCoding
-  - Plist
-  - Serialization
+  - plist
+  - serialization
 ---
 In this post I'll try to systemise the knowledge about major formats and types of data serialization in iOS development. I will also compare ObjC approach to the problem (NSCoding) with the one we got in Swift 4 (Codable) and will take a look at some specific use cases like interop between them and the ability to work with complex object graphs.
 
@@ -473,3 +469,8 @@ For serialising complex object graphs you cannot use pure Swift and Codable with
 Saying that I don't think that Codable can completely replace NSCoding in our code, at least now. You can leverage its benefits for some use cases like JSON encoding or serialization of simple structures to store them on disk. But there are still set of use cases when NSCoding is a better approach. Our job is to know the peculiarities and restrictions of both this approaches and use them in appropriate situations.
 
 _(One more interesting case on the topic can be found in this post: [Serialization of enum with associated type](https://dmtopolog.com/serialisation-of-enum-with-associated-type/))_
+
+&nbsp;
+
+---
+I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

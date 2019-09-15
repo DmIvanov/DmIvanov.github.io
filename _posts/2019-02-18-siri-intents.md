@@ -1,18 +1,14 @@
 ---
-id: 236
 title: Siri Intents
-date: 2019-02-18T08:25:14-02:00
+date: 2019-02-18
 author: topolog
 layout: post
-guid: https://dmtopolog.com/?p=236
 permalink: /siri-intents/
 image:
   path:  images-posts/2019-02-18-siri-intents/siri-logo-1920.jpg
   thumbnail: images-posts/2019-02-18-siri-intents/siri-logo-600.jpg
-categories:
-  - Tech Blog
 tags:
-  - AppExtension
+  - app extension
   - iOS
   - Siri
 ---
@@ -141,3 +137,8 @@ If we want more complex integration we check what can Domain Related Intents off
 In case when we need an extensive integration with Siri but we cannot find any predefined intent for our functionality, we go for Siri Shortcuts. In this scenario we loos the ability for the user to have a free chat with Siri. Instead of that we ask them to created a specific phrase which we then bind to the intent. When intent is handled we have to process it and provide some response (of a structure we defined ourselves). Custom UI is also an option we can use. Of course we need to adopt Intent Extensions for that.
 
 If we want Siri to suggest our functionality to the user (regardless the approach we’ve chosen) we add our intent to the intent definition file and donate an instance every time the user does the action in the app. Eventually Siri will figure out when is the best time and place to propose this function to the user.
+
+&nbsp;
+
+---
+I hope you enjoyed this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

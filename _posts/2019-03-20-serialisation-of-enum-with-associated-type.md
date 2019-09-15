@@ -1,21 +1,18 @@
 ---
-id: 286
 title: Serialization of enum with associated type
-date: 2019-03-20T04:48:58-02:00
+date: 2019-03-20
 author: topolog
 layout: post
-guid: https://dmtopolog.com/?p=286
 permalink: /serialisation-of-enum-with-associated-type/
 image:
   path: images-posts/2019-03-20-serialisation-of-enum-with-associated-type/IMGP3601-1200.jpg
   thumbnail: images-posts/2019-03-20-serialisation-of-enum-with-associated-type/IMGP3601-600.jpg
-categories:
-  - Tech Blog
 tags:
   - enum
   - iOS
-  - Serialization
+  - serialization
   - swift
+  - language feature
 ---
 Enumerations are not just first-class citizens in Swift. They adopt many features traditionally supported only by classes, such as computed properties or static and instance methods. Enumerations can also define custom initialisers, can be extended to expand their functionality beyond their original implementation, and can conform to protocols to provide standard functionality.
 
@@ -135,7 +132,7 @@ enum Barcode: Codable {
     enum CodingKeys: CodingKey {
         // ...
     }
-} 
+}
 ```
 
 Basically for encoding this enum we have 2 options (for simplicity we will discuss only encoding method). Firstly we can use just one key and encode different enum cases as different values for this key:
@@ -193,7 +190,7 @@ The second approach is to use different keys for different enum cases:
 If we print serialised data here we will see the following:
 
 ```
-{upc:true} 
+{upc:true}
 {qrCode:true}
 ```
 
@@ -400,3 +397,8 @@ This approach a bit more messy because on the same level we have all the keys fo
 Technically the compiler can generate Codable implementation for the enum with associated values as it does it for the rest types, but it’s not clear which structure for the output data to use. There is [a thread](https://forums.swift.org/t/automatic-codable-conformance-for-enums-with-associated-values-that-themselves-conform-to-codable/11499) at swift forum where automatic approach for this case is being discussed. But so far it doesn’t seem we gonna have any solution on a compilation level any time soon. So all is left for us is an implementation of Codable methods.
 
 _(More about native serialization can be found in this post: [Object serialization in iOS](https://dmtopolog.com/object-serialization-in-ios/))_
+
+&nbsp;
+
+---
+I hope you enjoyed this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

@@ -1,21 +1,18 @@
 ---
-id: 117
 title: Thoughts on iOS Architecture
-date: 2018-11-06T09:00:09-02:00
+date: 2018-11-06
 author: topolog
 layout: post
-guid: https://dmtopolog.com/?p=117
 permalink: /thoughts-on-ios-architecture/
 image:
   path: images-posts/2018-11-06-thoughts-on-ios-architecture/lance-anderson-QdAAasrZhdk-unsplash-2000.jpg
   thumbnail: images-posts/2018-11-06-thoughts-on-ios-architecture/lance-anderson-QdAAasrZhdk-unsplash-600.jpg
   caption: Photo by Lance Anderson on Unsplash
-categories:
-  - Tech Blog
 tags:
   - architecture
   - iOS
   - patterns
+  - thoughts
 ---
 
 Seems like in software development and in iOS particularly yet another post about the architecture looks banal if not just boring. But believe me I won't compare MVVM to VIPER or tell you how bad it is to have Massive View Controller. I will not explain you why you should follow a single responsibility principle, why DI is good or what are the trade-offs of using singletons - I assume you already know that (if not, there are tons of articles about it). This post is more as an attempt to structure my own thoughts on this topic. There will be more questions asked than answers given.
@@ -180,3 +177,8 @@ _<http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html>_
 
 _(Russian) Стас Цыганов - Сервис-ориентированная архитектура_  
 [_https://youtu.be/Eman1j06YsU_](https://youtu.be/Eman1j06YsU)
+
+&nbsp;
+
+---
+I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)
