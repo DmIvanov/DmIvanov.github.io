@@ -10,7 +10,7 @@ image:
 tags:
   - animation
   - iOS
-  - UI
+  - UI/UX
 ---
 
 Usually developers get to know _CADisplayLink_ as an advanced timer for "creating smooth frame-by-frame animation". And that's one of it's application, but not the only one. Let's take a look at the class, it's capabilities and some general approaches to use it.
