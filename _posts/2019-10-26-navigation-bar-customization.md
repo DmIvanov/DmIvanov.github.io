@@ -10,7 +10,6 @@ image:
 tags:
   - UI/UX
   - UINavigationController
-  - iOS13
 ---
 
 Customisation of a navigation bar is one of the first tasks a junior iOS-developer takes up. Roughly every app (and even most of the test samples and tutorials) has a navigation stack and nobody wants to stick to the default system style of a bar.
