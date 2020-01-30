@@ -16,6 +16,8 @@ Customisation of a navigation bar is one of the first tasks a junior iOS-develop
 
 Here is the first part of the series **Navigation Bar Customisation**. We'll try to gather and systemise the knowledge on the matter, including the old ways to tackle it as well as the new iOS 13 approach. In this post we'll recall the basics: the properties responsible for each part of the Navigation Bar and the ways we change their values according to our mock-ups.
 
+([Here is the second part of the series](https://dmtopolog.com/navigation-bar-customisation-2/) where we talk about some architectural problems regarding the NavigationBar, UIAppearance and the new UINavigationBarAppearance)
+
 &nbsp;
 
 ## The parts of a navigation bar.
