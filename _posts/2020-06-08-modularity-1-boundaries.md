@@ -44,10 +44,10 @@ The thing is: there are no technical ways to enforce these agreements. Everythin
 
 Why would one do that? A lot of possibilities:
   - you haven't written the rules down
-  - it's so easy to forget or confuse something
-  - somebody just disagrees with the architectural concepts in use, or maybe mostly agrees, but treats some case as an exception or things that the agreements are outdated
-  - a new developer, who doesn't know or doesn't respect the agreements
-  - making a shortcut under the pressure of a deadline
+  - somebody forgets or confuses the rules
+  - somebody just disagrees with the architectural concepts in use, or maybe mostly agrees but treats some case as an exception, or thinks that the agreements are outdated
+  - a new developer, who doesn't know or doesn't respect the agreements, doesn't hesitate to follow them
+  - somebody makes a shortcut under the pressure of a deadline
 
 As the team of developers working on a product evolves (some people leave, new people come) all these agreements and assumptions stop work at some point. If some shortcuts can be physically done without extra effort, maybe even unintentionally, it will be done sooner or later. So the boundaries will be crossed and interfaces will be bypassed.
 
@@ -59,7 +59,7 @@ When talking about architectural modularity we can abstract from the language as
 
 Regarding physical modularity on iOS, we have to distinguish (Objective-)C modules from Swift modules. Modules are being created by the compiler and we have two different compiler frontends - clang and swiftc - which deal with modules differently.
 
-_(More about these different compilation pipelines you can find in one of my previous posts - (Compiler code optimization for Swift and Objective-C)[https://dmtopolog.com/code-optimization-for-swift-and-objective-c/]. If you need more technical insights into clang modularity check out the (documentation)[https://clang.llvm.org/docs/Modules.html] for more info regarding Swift take a look (here)[https://forums.swift.org/t/explicit-module-builds-the-new-swift-driver-and-swiftpm/36990], (here)[https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html] and (here)[https://swift.org/package-manager/])_
+_(More about these different compilation pipelines you can find in one of my previous posts - [Compiler code optimization for Swift and Objective-C](https://dmtopolog.com/code-optimization-for-swift-and-objective-c/). If you need more technical insights into clang modularity check out the [documentation](https://clang.llvm.org/docs/Modules.html) for more info regarding Swift take a look [here](https://forums.swift.org/t/explicit-module-builds-the-new-swift-driver-and-swiftpm/36990), [here](https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html) and [here](https://swift.org/package-manager/]))_
 
 Although there are some significant differences between Swift and (Objective-)C modules (name spacing, access control,..) the essence is the same.
 
@@ -87,7 +87,7 @@ As we can see in Swift we are not able to build custom boundaries between archit
 
 All your physical modules can be put into separate projects and even separate repositories. In case of including just a binary, you detach two modules even more. The main project in this case has no references to the source code of the dependency.
 
-The next level of separation is using versioning for your modules. In this case, to make a change in the MPI you need to make a change in the module's project, release a new version of the module, and then integrate the new version into your host project. (I'm not saying you need module versioning for making the boundaries stronger. The other way around: if you do have the versioning in place - or planning to have it due to other reasons - it will also enhance the boundaries.)
+The next level of separation is using versioning for your modules. In this case, to make a change in the MPI you need to make a change in the module's project, release a new version of the module, and then integrate the new version into your host project. (I'm not saying you need module versioning for making the boundaries stronger. I see it the other way around: if you do have the versioning in place - or you plan to have it due to other reasons - it will also enhance the boundaries.)
 
 Different modules can be developed by different teams/departments. This makes all the small changes in the module just to fit the needs of the host app borderline impossible. (If you have such a complex structure you are more likely have several different host apps that use the module. Module maintainers are likely to have their module as a product, so they have their own goals and backlog.)
 
