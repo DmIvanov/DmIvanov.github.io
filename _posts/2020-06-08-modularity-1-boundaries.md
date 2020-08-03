@@ -11,12 +11,19 @@ image:
 tags:
   - modules
   - iOS
-  - swift
+  - architecture
+  - no code
 categories:
   - Tech Blog
 ---
 
 In this post we'll talk about why boundaries matter and what types of modularity can we distinguish in our projects based on the existing boundaries.
+
+This post is part of the series on modularity:
+- [**Modularity. Boundaries**](https://dmtopolog.com/modularity-1-boundaries/)
+- [Modularity. Encapsulation](https://dmtopolog.com/modularity-2-encapsulation/)
+
+&nbsp;
 
 ## Boundaries and interfaces.
 
