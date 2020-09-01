@@ -13,6 +13,8 @@ tags:
   - serialization
   - swift
   - language feature
+share: true
+
 ---
 Enumerations are not just first-class citizens in Swift. They adopt many features traditionally supported only by classes, such as computed properties or static and instance methods. Enumerations can also define custom initialisers, can be extended to expand their functionality beyond their original implementation, and can conform to protocols to provide standard functionality.
 
@@ -397,8 +399,3 @@ This approach a bit more messy because on the same level we have all the keys fo
 Technically the compiler can generate Codable implementation for the enum with associated values as it does it for the rest types, but it’s not clear which structure for the output data to use. There is [a thread](https://forums.swift.org/t/automatic-codable-conformance-for-enums-with-associated-values-that-themselves-conform-to-codable/11499) at swift forum where automatic approach for this case is being discussed. But so far it doesn’t seem we gonna have any solution on a compilation level any time soon. So all is left for us is an implementation of Codable methods.
 
 _(More about native serialization can be found in this post: [Object serialization in iOS](https://dmtopolog.com/object-serialization-in-ios/))_
-
-&nbsp;
-
----
-I hope you enjoyed this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

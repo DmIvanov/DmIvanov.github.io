@@ -11,6 +11,7 @@ tags:
   - animation
   - iOS
   - UI/UX
+share: true
 ---
 
 Usually developers get to know _CADisplayLink_ as an advanced timer for "creating smooth frame-by-frame animation". And that's one of it's application, but not the only one. Let's take a look at the class, it's capabilities and some general approaches to use it.
@@ -144,8 +145,3 @@ _**Useful links:**_
 [https://developer.apple.com/documentation/metal/advanced\_command\_setup/cpu\_and\_gpu_synchronization](https://developer.apple.com/documentation/metal/advanced_command_setup/cpu_and_gpu_synchronization)  
 <https://developer.apple.com/library/archive/technotes/tn2460/_index.html> (CADisableMinimumFrameDuration key)  
 <https://github.com/DmIvanov/Animations> (my sample project)
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

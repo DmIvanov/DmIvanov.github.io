@@ -11,6 +11,7 @@ tags:
   - no code
   - thoughts
   - WWDC
+share: true
 ---
 
 Happy New Apple Year! For ones who work with iOS/macOS/swift development every new year starts not in January but in the beginning of June.
@@ -48,8 +49,3 @@ At the same the rain brings some new energy to the system around the river. The 
 So all you can do is just relax, do whatever you have time to do and observe the pace of evolution, trying to catch the most valuable things floating on the surface of the river or from its banks. Don't be obsessed, don't be depressed.. Season comes, season goes. It is indeed more interesting to have these seasons than to see (and feel) the same weather day after day.
 
 The Earth keeps on rolling regardless of all the natural events: booms of life, storms, droughts, floods.. and huge conferences.
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

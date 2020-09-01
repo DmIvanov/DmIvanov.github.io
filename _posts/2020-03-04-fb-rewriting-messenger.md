@@ -12,6 +12,7 @@ tags:
   - architecture
   - thoughts
   - no code
+share: true
 ---
 
 In my small iOS information bubble [this post from FB-engineering](https://engineering.fb.com/data-infrastructure/messenger/) exploded so nobody could ignore it.
@@ -43,9 +44,3 @@ About that new SQLite wrapper.. I heard it's quite a revolutionary engine (would
 This story also made me think about the trade-offs of big companies between huge resources and lack of flexibility. What was the state of the art 6-8 years ago is dusty legacy now, but you cannot easily get rid of it or migrate to a new technology. At that times there were no architecture in iOS except MVC, not so many people actively used patterns, DRY, KISS and all the other basic principles, "reactive" and "declarative" were not parts of a developer's vocabulary. I can imagine some leftover from that wild-west times. You can still find tons of code to satisfy some requirements which make no sense now, code you cannot easily refactor or remove. Building from scratch might be a good idea in this case (which is not for majority of the other (normal) cases)
 
 The last thing. While reading I was eager to find some mentioning of Swift. But... custom C components... SQLite wrapper... 'categories' of basic views... So the same C-based stack as before for the new app in 2020. I know FB has reasons and I do understand most of them, I really like ObjC for its freedom and runtime capabilities... I think I'm just awaiting some new era which starts when FB deploys the first swift code into their main app ;-)
-
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

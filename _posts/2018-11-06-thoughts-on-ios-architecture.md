@@ -13,6 +13,8 @@ tags:
   - iOS
   - patterns
   - thoughts
+share: true
+
 ---
 
 Seems like in software development and in iOS particularly yet another post about the architecture looks banal if not just boring. But believe me I won't compare MVVM to VIPER or tell you how bad it is to have Massive View Controller. I will not explain you why you should follow a single responsibility principle, why DI is good or what are the trade-offs of using singletons - I assume you already know that (if not, there are tons of articles about it). This post is more as an attempt to structure my own thoughts on this topic. There will be more questions asked than answers given.
@@ -177,8 +179,3 @@ _<http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html>_
 
 _(Russian) Стас Цыганов - Сервис-ориентированная архитектура_  
 [_https://youtu.be/Eman1j06YsU_](https://youtu.be/Eman1j06YsU)
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

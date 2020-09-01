@@ -11,6 +11,7 @@ tags:
   - app extension
   - data sharing
   - iOS
+share: true
 ---
 
 App extensions are permeating more and more into our daily job. But some nuances of the way they work are still not so obvious. In this post I try to investigate different ways to share data between an app and its extension.

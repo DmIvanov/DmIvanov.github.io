@@ -1,5 +1,5 @@
 ---
-title: Compiler code optimization for Swift and Objective-C
+title: Compile-time code optimization for Swift and Objective-C
 date: 2018-12-02
 author: topolog
 layout: post
@@ -14,11 +14,13 @@ tags:
   - build process
   - compiler
   - iOS
+share: true
+
 ---
 
 Some time ago I needed to switch off asserts for one of the configurations in our project. I kinda read somewhere that whether or not asserts compile to the resulting binary depends primarily on the code optimisation level. But I wondered if there was any way to control the asserts without changing the optimisation level? What if I don't want to touch it for the asserts only? Do we have separate optimisation levels for Swift and Objective-C code? What do they mean, what are they influence on? How do two compilers in the mixed Swift/ObjC project work together optimising the code? What specifically the compiler does for each optimisation level?
 
-To answer these question I tried to get some details about XCode build pipeline, about how the compilers work and where is the place for the code optimization in the process. Tell you in advance that I couldn't find satisfying answers for all of my questions, but the picture of the building process, compilers and optimisation levels became more clear for me.
+To answer these question I tried to get some details about xcode build pipeline, about how the compilers work and where is the place for the code optimization in the process. Tell you in advance that I couldn't find satisfying answers for all of my questions, but the picture of the building process, compilers and optimisation levels became more clear for me.
 
 
 
@@ -28,7 +30,7 @@ To answer these question I tried to get some details about XCode build pipeline,
 >
 > -Scott Owens ICFP 2017
 
-First some general theory. There are several ways to build an iOS/macOS project: using XCode, XCodebuild from the command line, fastlane (which uses XCodebuild under the hood), manual scripts or something else. Anyway you need to do the same set of actions to make the app package which can be installed on a device.
+First some general theory. There are several ways to build an iOS/macOS project: using Xcode, xcodebuild from the command line, fastlane (which uses xcodebuild under the hood), manual scripts or something else. Anyway you need to do the same set of actions to make the app package which can be installed on a device.
 
 ```
 $ swiftc -module-name YourModule -target arm64-apple-ios12.0 -swift-version 4.2 ...
@@ -125,18 +127,18 @@ Here are **LLVM optimization levels** with brief corresponding descriptions:
 
 Depending on the level LLVM makes several passes through given IR analysing and changing the code. Looking for the lists of specific passes for each optimization level I didn't manage to find anything other that [this SO answer](https://stackoverflow.com/a/15548189/8915388) which arises more additional questions. The official list of LLVM passes (without separation to different levels) can be found [here](http://llvm.org/docs/Passes.html).
 
-When creating a new project XCode sets up 2 configurations with following default values for the LLVM optimization levels:
+When creating a new project Xcode sets up 2 configurations with following default values for the LLVM optimization levels:
 
 1. Debug: **-O0 (none)** - the fastest compile time, the easiest debugging
 2. Release: **-Os (fastest, smallest)** - the best combination of small binary size and fast runtime execution
 
-Interestingly enough, configuration option responsible for C-family language optimisation calls (in project.pbxproj file) is called `GCC_OPTIMIZATION_LEVEL`. If you dive a bit in the history of XCode you will see that till XCode 3 the GCC ([GNU Compiler Collection](https://gcc.gnu.org/)) was the compiler used by the IDE, then there was a transition period when the user could change the compiler in the target settings and with the release of XCode 5 CLang became the only option (<a href="https://useyourloaf.com/blog/compiler-options-in-XCode-gcc-or-llvm">a piece of such history</a>). Seems like the target property name still has that legacy.
+Interestingly enough, configuration option responsible for C-family language optimisation calls (in project.pbxproj file) is called `GCC_OPTIMIZATION_LEVEL`. If you dive a bit in the history of Xcode you will see that till Xcode 3 the GCC ([GNU Compiler Collection](https://gcc.gnu.org/)) was the compiler used by the IDE, then there was a transition period when the user could change the compiler in the target settings and with the release of Xcode 5 CLang became the only option (<a href="https://useyourloaf.com/blog/compiler-options-in-xcode-gcc-or-llvm">a piece of such history</a>). Seems like the target property name still has that legacy.
 
 
 
 ### Swift pipeline
 
-Swift is young and rapidly developing language. So as it's compiler. In terms of code optimisation some features are being changed and new features appear almost every year. (What I'm writing here about is valid for Swift 4.2 and XCode 10)
+Swift is young and rapidly developing language. So as it's compiler. In terms of code optimisation some features are being changed and new features appear almost every year. (What I'm writing here about is valid for Swift 4.2 and Xcode 10)
 
 Let's take a look at the compilation pipeline for Swift:
 
@@ -215,13 +217,13 @@ The trade-off between the two optimization level is as following: size optimizat
 
 Of course we also shouldn't forget about the Whole-Module Optimization (appeared in Swift 3). Now this property sits in the project settings as Swift compilation mode and has two options:
 
-- Incremental (Single file in XCode 9.3)
+- Incremental (Single file in Xcode 9.3)
 - Whole module
 
 
-The essence of the optimisation is intelligibly described in the official <a href="https://swift.org/blog/whole-module-optimizations">swift blog.</a> But briefly it's not related to how the compiler process the source code, but what exactly it takes as an input for its work. In incremental (single file) mode the compiler works separately with each swift file doing all the analysis and optimisations. In a whole-module mode it "combines" all the swift source files in one module all together and takes the entire module as a source for all the processing. Of course every mode has its trade-offs. Whole-module optimisation has several significant benefits based on the bigger context for the optimizations (whole module instead of just one file) - when the compiler knows more about the code it can do much more for you in terms of optimisation. But it's clear that in this case the compiler needs to recompile the entire module every time you run it, even if you made just a small change in one file (as there are know separate files for the compiler). That's why by default in the new XCode project the debug configuration has an incremental compilation mode (almost no optimizations, the fastest incremental compilation) and the release configuration has whole-module optimisation switched on (no need in benefits of incremental compilation, better optimisations).
+The essence of the optimisation is intelligibly described in the official <a href="https://swift.org/blog/whole-module-optimizations">swift blog.</a> But briefly it's not related to how the compiler process the source code, but what exactly it takes as an input for its work. In incremental (single file) mode the compiler works separately with each swift file doing all the analysis and optimisations. In a whole-module mode it "combines" all the swift source files in one module all together and takes the entire module as a source for all the processing. Of course every mode has its trade-offs. Whole-module optimisation has several significant benefits based on the bigger context for the optimizations (whole module instead of just one file) - when the compiler knows more about the code it can do much more for you in terms of optimisation. But it's clear that in this case the compiler needs to recompile the entire module every time you run it, even if you made just a small change in one file (as there are know separate files for the compiler). That's why by default in the new Xcode project the debug configuration has an incremental compilation mode (almost no optimizations, the fastest incremental compilation) and the release configuration has whole-module optimisation switched on (no need in benefits of incremental compilation, better optimisations).
 
-There is also kind of an optimization option **-Ounchecked** compiler flag which was one of the options of the Optimization level in previous XCode versions and now is called Disable Safety Checks. It's responsible for removing some optimization passes related to things like int overflow. But there are <a href="https://forums.swift.org/t/deprecating-ounchecked/6928/10">some arguments</a> if it's an "optimization level" in a first place, and where is it's place in the compiler.
+There is also kind of an optimization option **-Ounchecked** compiler flag which was one of the options of the Optimization level in previous Xcode versions and now is called Disable Safety Checks. It's responsible for removing some optimization passes related to things like int overflow. But there are <a href="https://forums.swift.org/t/deprecating-ounchecked/6928/10">some arguments</a> if it's an "optimization level" in a first place, and where is it's place in the compiler.
 
 We've already mentioned that there are 2 sets of optimisation passes for swift code: frontend optimizations (made by SIL optimizer) and backend optimization (made by LLVM Core). So you might think: "Wait.. if we have whole-module mode turned on and the compiler treats the entire module - which often means the entire project</em> - as the big chunk of code, so we miss all the concurrency benefits. We cannot process different parts of the module simultaneously anymore". And partly you are right. For the frontend the compilation of the entire module is indeed one single process. But it seems that Apple engineers managed to split the module for LLVM, so at least the backend can apply some concurrency to speed up the compilation.
 
@@ -255,15 +257,15 @@ In case of Swift there are several types of asserts (you can read about them for
 
 Removing asserts is one of the optimizations that swift compiler does (or _does not_ depending on your settings). So as it said in the <a href="https://developer.apple.com/documentation/swift/1541112-assert">documentation</a> if optimization level is **-Onone** you will have the asserts in your resulting code. If the level is different they will be optimized out of the code.
 
-But Swift compiler also has a specific flag `-assert-config` which overwrites the optimization level for the assertions. So if you have this flag set with some value it will cancel whatever the optimization level defines for the assertions. The flag has string values: `Debug`, `Release`, `Unchecked`, `DisableReplacement`. _Debug_ and _DisableReplacemen_ values cause your swift asserts to remain in the resulting code; _Release_ and _Unchecked_ force the compiler to optimize them out. There is no dedicated property for it in the XCode project settings so you have to add it in the Other Swift Flags section (`-assert-config Unchecked` for instance).
+But Swift compiler also has a specific flag `-assert-config` which overwrites the optimization level for the assertions. So if you have this flag set with some value it will cancel whatever the optimization level defines for the assertions. The flag has string values: `Debug`, `Release`, `Unchecked`, `DisableReplacement`. _Debug_ and _DisableReplacemen_ values cause your swift asserts to remain in the resulting code; _Release_ and _Unchecked_ force the compiler to optimize them out. There is no dedicated property for it in the Xcode project settings so you have to add it in the Other Swift Flags section (`-assert-config Unchecked` for instance).
 
 **Asserts in Objective-C**
 
 In ObjC there are two types of assertions: `assert(condition)` coming from C and `NSAssert(condition, comment)` - so called Foundation Assertions.
 
-The first hardcore one will be in the resulting code almost in all conditions regardless you configuration, optimisation level and the rest of the XCode build settings. The only way to switch it off that I'm aware of is to define `NDEBUG=1` Preprocessor Macros (together with `DEBUG=1` which usually defined by default).
+The first hardcore one will be in the resulting code almost in all conditions regardless you configuration, optimisation level and the rest of the Xcode build settings. The only way to switch it off that I'm aware of is to define `NDEBUG=1` Preprocessor Macros (together with `DEBUG=1` which usually defined by default).
 
-NSAssert is not so tough and handling it is easier: there is a bool property in the XCode build settings Enable Foundation Assertions (`ENABLE_NS_ASSERTIONS`). Also assertions are disabled if preprocessor macro `NS_BLOCK_ASSERTIONS` is defined. But it also has nothing to do with the optimization level.
+NSAssert is not so tough and handling it is easier: there is a bool property in the Xcode build settings Enable Foundation Assertions (`ENABLE_NS_ASSERTIONS`). Also assertions are disabled if preprocessor macro `NS_BLOCK_ASSERTIONS` is defined. But it also has nothing to do with the optimization level.
 
 So eventually you don't need to change any of the optimization levels in your project settings to switch the assertions on/off. Both compilers have special compilation flags for handling them.
 
@@ -293,7 +295,7 @@ _**LLVM optimization:**_
 <br>
 <a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/MOSXAppProgrammingGuide/Performance/Performance.html"> https://developer.apple.com/library/archive/documentation/General/Conceptual/MOSXAppProgrammingGuide/Performance/Performance.html</a> (Compiler-Level Optimizations section)
 <br>
-<a href="https://pewpewthespells.com/blog/buildsettings.html#gcc_optimization_level"> https://pewpewthespells.com/blog/buildsettings.html#gcc_optimization_level</a> (XCode Build Settings Reference)
+<a href="https://pewpewthespells.com/blog/buildsettings.html#gcc_optimization_level"> https://pewpewthespells.com/blog/buildsettings.html#gcc_optimization_level</a> (Xcode Build Settings Reference)
 
 _**Swift compiler:**_
 <br>
@@ -312,8 +314,3 @@ _**SIL:**_
 <a href="https://github.com/apple/swift/blob/master/docs/SIL.rst"><em> Documentation</em></a>
 <br>
 <a href="https://youtu.be/Ntj8ab-5cvE">Video: Joseph Groff & Chris Lattner Swift's High-Level IR</a>
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

@@ -11,6 +11,7 @@ image:
 tags:
   - HealthKit
   - iOS
+share: true
 
 ---
 
@@ -160,8 +161,3 @@ If you omit setting the `updateHandler` the query just triggers the `resultsHand
 And one more quote from the documentation:
 
 > Often, it is more efficient to setup and run a single anchored object query, then to run separate sample and observer queries.
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

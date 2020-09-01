@@ -10,6 +10,7 @@ image:
 tags:
   - UI/UX
   - UINavigationController
+share: true
 ---
 
 Customisation of a navigation bar is one of the first tasks a junior iOS-developer takes up. Roughly every app (and even most of the test samples and tutorials) has a navigation stack and nobody wants to stick to the default system style of a bar.
@@ -278,9 +279,3 @@ If you read the documentation for the property till the end you would see the se
 > To show a custom shadow image, you must also set a custom background image with the `setBackgroundImage(_:for:)` method. If the default background image is used, then the default shadow image is used regardless of the value of this property.
 
 Seems like it's applicable only for iOS lower than 11. Starting from iOS 11 it's enough to just change the shadowImage without dealing with the background.
-
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

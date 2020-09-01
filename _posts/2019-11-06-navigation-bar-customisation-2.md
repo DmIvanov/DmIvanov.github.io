@@ -11,6 +11,7 @@ tags:
   - UI/UX
   - UINavigationController
   - iOS13
+share: true
 ---
 
 Navigation bar customisation is quite a trivial task, but even before iOS 13 you could approach it in couple of different ways. This year another API has appeared. The new way suppose to replace the old ones and solve the issues which were not addressed by Apple so far. Let's see how it fits into the toolset that is in our disposal.
@@ -258,8 +259,3 @@ public extension UINavigationBar {
     }
 }
 ```
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

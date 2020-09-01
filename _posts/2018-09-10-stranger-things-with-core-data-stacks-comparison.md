@@ -12,6 +12,7 @@ tags:
   - data storing
   - CoreData
   - iOS
+share: true
 
 ---
 
@@ -63,8 +64,3 @@ After couple of days full of thoughts and experiments a gave up, and decided to 
 ([Here is the setup I worked with](https://github.com/DmIvanov/CoreDataStacks))
 
 You can get some more insights into Core Data stacks, their differences and some experience migrating from one stack to another from [my presentation at CocoaHeadsNL](https://youtu.be/BF9DD8XXxaI)
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)

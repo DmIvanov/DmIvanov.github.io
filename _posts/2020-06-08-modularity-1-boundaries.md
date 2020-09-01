@@ -15,6 +15,7 @@ tags:
   - no code
 categories:
   - Tech Blog
+share: true
 ---
 
 In this post we'll talk about why boundaries matter and what types of modularity can we distinguish in our projects based on the existing boundaries.
@@ -130,8 +131,3 @@ Modularity (which can be different as we described here) tells you how well diff
 ## Conclusion
 
 Boundaries are just one of the aspects of modularity. Boundaries are your safety net. The stronger the boundaries between your modules are the safer your project is in terms of keeping the separation of concerns.
-
-&nbsp;
-
----
-I hope you liked this piece of reading. If you have any questions, suggestions or corrections you can reach me out [on Twitter](https://twitter.com/dmtopolog)
