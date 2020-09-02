@@ -17,9 +17,7 @@ categories:
 share: true
 ---
 
-"Protocols is one of the most powerful language features in swift" - people say. Hard to argue. But let's try to understand why.
-
-There might be several reasons, but most likely people say that because you can do a lot of different things with protocols. (Maybe even too many... but we will talk about it later).
+"Protocols is one of the most powerful language features in swift" - people say. Hard to argue. In swift you can do a lot of different things with protocols. (Maybe even too many... but we will talk about it later).
 
 Let's try to look at them from a distance and understand what `language features` are masked by this simple word "Protocol" in Swift.
 
