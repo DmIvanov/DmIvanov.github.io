@@ -17,7 +17,7 @@ categories:
 share: true
 ---
 
-"Protocols is one of the most powerful language features in swift" - people say. Hard to argue. In swift you can do a lot of different things with protocols. (Maybe even too many... but we will talk about it later).
+"Protocols is one of the most powerful language features in Swift" - people say. Hard to argue. In Swift you can do a lot of different things with protocols. (Maybe even too many... but we will talk about it later).
 
 Let's try to look at them from a distance and understand what `language features` are masked by this simple word "Protocol" in Swift.
 
@@ -47,7 +47,7 @@ class FeedViewModel {
 }
 ```
 
-We have several screens for different news agencies. For each agency we created a dedicated provider-class that conforms to the `NewsProvider`-protocol. So it can be injected into the view model and be used as a data source.
+We have several screens for different news agencies. For each agency we create a dedicated provider-class that conforms to the `NewsProvider`-protocol. So it can be injected into the view model and can be used as a data source.
 
 ```swift
 class ReutersNewsProvider: NewsProvider {}
@@ -66,11 +66,11 @@ class FeedViewModel {
 let viewModel = FeedViewModel(newsProvider: ReutersNewsProvider())
 ```
 
-As simple as that. That's what is called "protocols" in ObjC, that's what called "interfaces" in most other languages.
+As simple as that. We abstract the interface from the implementation so later we can use various implementations of the `NewsProvider` interface without view model feeling a difference. In lot's of other languages it's called directly "Interface". In Objective-C it's called "Protocol" and Swift inherited the name for this language concept there.
 
 ### What do we gain here
 
-That's what help you to implement [composition](https://en.wikipedia.org/wiki/Composite_pattern) or [delegation](https://en.wikipedia.org/wiki/Delegation_pattern) in your swift code.
+This application of protocols in Swift help you to implement [composition](https://en.wikipedia.org/wiki/Composite_pattern) or [delegation](https://en.wikipedia.org/wiki/Delegation_pattern) in your Swift code.
 
 Here we have an example of **dynamic (or runtime) polymorphism**. When `FeedViewModel`-class is being compiled there is a reference to a `NewsProvider`-protocol. When the user enters Reuters page in our app we instantiate a view model and inject `ReutersNewsProvider`. So a specific class appears in the view model only in runtime.
 
@@ -100,7 +100,7 @@ class FeedViewModel {
 
 ## 2a. Protocol as a compile-time constraint
 
-Other than traditional dynamic polymorphism protocols can be also used for static polymorphism. In this case, a protocol is resolved to a specific data type not in runtime, but in compile time.
+Other than traditional dynamic polymorphism, protocols can be also used for static polymorphism. In this case, a protocol is resolved to a specific data type not in runtime, but in compile-time.
 
 Let's rewrite our `addNewsProvider`-function this way:
 
@@ -115,7 +115,7 @@ class FeedViewModel {
 }
 ```
 
-Functional-wise nothing changed but now we use generics. Instead of saying that we pass "something conforming to NewsProvider" we say that "we pass the exact type T which conforms to NewsProvider". Now we use swift generics system. For this piece of code where `T` is a parameter, it's still dynamic polymorphism: the real type appears here only in runtime. You can still keep this `newsProviders: [NewsProvider]` for example.
+Functional-wise nothing changed but now we use generics. Instead of saying that we pass "something conforming to NewsProvider" we say that "we pass the exact type T which conforms to NewsProvider". Now we use Swift generics system. For this piece of code where `T` is a parameter, it's still dynamic polymorphism: the real type appears here only in runtime. You can still keep this `newsProviders: [NewsProvider]` for example.
 
 But in the client code now the compiler has to resolve it to a specific type. So you cannot do something like that:
 
@@ -150,7 +150,7 @@ Now your protocol cannot be used other than as a generic constraint. All that ca
 
 > Protocol _'YourProtocol'_ can only be used as a generic constraint because it has Self or associated type requirements
 
-You can either use some constraint type `T<NewsProvider>` (when possible) which will be resolved to a specific type by the compiler, so you accept these static rules). Or you can use [type erasure](https://www.google.com/search?q=type+erasure+in+swift) and insist on some runtime logic in resolving the types.
+You can either use some constraint type `T<NewsProvider>` (when possible) which will be resolved to a specific type by the compiler, so you accept these static rules). Or you can use [type erasure](https://www.google.com/search?q=type+erasure+in+Swift) and insist on some runtime logic in resolving the types.
 
 If you are not sure what "Self-constraint" is take a look at `Equatable`:
 
@@ -162,13 +162,13 @@ public protocol Equatable {
 
 In every specific case of conforming `Self` will be replaced to a specific data type (as you cannot compare two different ones even if they both conform to Equatable). So it's not so wrong to say that `Self` behaves here the same way as `associatedtype` does.
 
-BTW, some of these runtime-restrictions are related to something called "existentials". This concept is used in other programming languages and was mentioned in the [Generics Manifesto](https://github.com/apple/swift/blob/master/docs/GenericsManifesto.md#existentials) and there were [at least one discussion](https://forums.swift.org/t/status-of-generalized-existentials/13982) and [a proposal](https://github.com/austinzheng/swift-evolution/blob/az-existentials/proposals/XXXX-enhanced-existentials.md) how it can be solved in Swift. But seems like there is no further work in this direction.
+BTW, some of these runtime-restrictions are related to something called "existentials". This concept is used in other programming languages and was mentioned in the [Generics Manifesto](https://github.com/apple/Swift/blob/master/docs/GenericsManifesto.md#existentials) and there were [at least one discussion](https://forums.Swift.org/t/status-of-generalized-existentials/13982) and [a proposal](https://github.com/austinzheng/Swift-evolution/blob/az-existentials/proposals/XXXX-enhanced-existentials.md) how it can be solved in Swift. But seems like there is no further work in this direction.
 
 ### What do we gain here
 
 Associated types and Self-constraint (which kinda associated type as well ;-)) are something that allows us to do all this protocol-oriented (or generic-oriented) programming. It allows us to write flexible code which can abstract huge chunks of functionality from the specific types, so they can be reused.
 
-With such a powerful concept you can abstract, for instance, your [data store logic](https://faical.dev/articles/modern-swift-data-access-layers.html), your [table view logic](https://github.com/maxsokolov/TableKit), or every here and there for [abstracting smaller pieces of logic](https://www.swiftbysundell.com/articles/specializing-protocols-in-swift/).
+With such a powerful concept you can abstract, for instance, your [data store logic](https://faical.dev/articles/modern-Swift-data-access-layers.html), your [table view logic](https://github.com/maxsokolov/TableKit), or every here and there for [abstracting smaller pieces of logic](https://www.Swiftbysundell.com/articles/specializing-protocols-in-Swift/).
 
 The price of this abstraction is quite high. It's not only the limitations we just mentioned but also some additional cognitive load (hope to tackle it more in detail in one of the next posts).
 
@@ -180,7 +180,7 @@ Sometimes protocol can be used additionally to tell the compiler to generate som
 
 For instance, if you male your model to conform to `Codable` the compiler will generate the implementation of Encodable/Decodable functions for you. The same happens with `Equatable`. Implementation can be generated if all the nested data types conform to the protocol. If you need to add some logic you are free to reimplement the protocol-methods yourself, but in the majority of cases it's not needed.
 
-If you are interested in how the compiler does it check out [this (as always) brilliant article at NSHipster](https://nshipster.com/swift-gyb/)
+If you are interested in how the compiler does it check out [this (as always) brilliant article at NSHipster](https://nshipster.com/Swift-gyb/)
 
 ### What do we gain here
 
