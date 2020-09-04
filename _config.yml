@@ -30,7 +30,7 @@ google_analytics: UA-127243344-1
 
 # paginate: 20
 # paginate_path: /page:num/
-
+read_time: true
 future: true
 
 # Build settings
