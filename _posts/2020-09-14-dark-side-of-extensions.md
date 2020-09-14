@@ -119,7 +119,32 @@ extension BlogPost {
 
 But at some point we got validation logic which should be applied to the post before it's being written on disk. On one side, it's used exclusively for writing on disk. On another side, it's not directly related to working with disk. Should we put it to the base implementation or to the extension?
 
-Another confusion is with stored properties. We cannot add them to extensions. So when we have some extension-related properties we have to keep them outside of the extension, which spoils the entire idea of such logical separation.
+Another confusion is with stored properties. We cannot add them to extensions. So when we have some extension-related properties we have to keep them outside of the extension - in the main data-type implementation.
+
+Let's say we want to add a directory path to our Persistence-extension, so we don't need to pass the full path from the outside.
+
+```swift
+struct BlogPost {
+    let directoryPath = "path/to/a/directory/"
+    // general logic
+}
+
+// Persistence
+extension BlogPost {
+    init(for id: String) {
+        let path = directoryPath + id
+        // implementation
+    }
+    func write() {
+        let path = directoryPath + self.id
+        // implementation
+    }
+}
+```
+
+It kinda spoils the entire idea of logical separation, because now we have a piece of extension-related logic in the main implementation.
+
+_(ObjC runtime - the only alternative - may bring us more additional headache here, so it doesn't worth to be used just to compensate this logic-separation flaw, imho)_
 
 If you add extensions to your own objects it might get even worse if you (or somebody from your team) start to use the extension functionality in the object's implementation:
 
