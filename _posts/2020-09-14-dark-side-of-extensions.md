@@ -177,3 +177,5 @@ We shouldn’t blindly copy everything that Apple does. What works there is not 
 (Peter Parker... [or some Frenchman from XVIII century](https://en.wikipedia.org/wiki/With_great_power_comes_great_responsibility))
 
 I'm not talking you out of using extensions. I just want you to keep in mind all that nuances when using this language feature.
+
+We didn't mention protocol extensions here, because that's a different topic. Hope to cover it in next posts, stay tuned!
