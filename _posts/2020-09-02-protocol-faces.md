@@ -24,8 +24,6 @@ Let's try to look at them from a distance and understand what `language features
 _(I don't want to overload you with the code examples here as there are plenty of them out there. But I need to illustrate some ideas with code (and I don't want to just copy-past somebody's examples... even if they are great ;-)).
 So let's consider some News Feed app that fetches and displays recent news as our playground.)_
 
-&nbsp;
-
 ## 1. Protocol as a dynamic interface
 
 First of all, protocol is a good old interface. It's a contract which one object relies on and another object conforms to.
@@ -95,8 +93,6 @@ class FeedViewModel {
     }
 }
 ```
-
-&nbsp;
 
 ## 2a. Protocol as a compile-time constraint
 
@@ -172,8 +168,6 @@ With such a powerful concept you can abstract, for instance, your [data store lo
 
 The price of this abstraction is quite high. It's not only the limitations we just mentioned but also some additional cognitive load (hope to tackle it more in detail in one of the next posts).
 
-&nbsp;
-
 ## 3. Protocol as a code generation directive
 
 Sometimes protocol can be used additionally to tell the compiler to generate some code. Usually, that's some boilerplate code for the type conforming to this protocol.
@@ -186,8 +180,6 @@ If you are interested in how the compiler does it check out [this (as always) br
 
 Protocols in these cases still play their role as interfaces. Some mechanisms from a standard library need your custom data types to conform to these protocols. But the code generation is a nice addition which makes you free from implementing the same code again and again. Of course, it's applicable only to specific use cases when implementation follows some pattern so can be easily automated. (Think about your own protocols, maybe it could make sense to use some code generation for some of them as well ;-) )
 
-&nbsp;
-
 ## To be continued...
 
-I suppose you noticed that we haven't said a word about `extensions` here, although a lot of folks think they a necessary part of "Protocol-Oriented development". In the next posts, I plan to talk about the extensions, what they add to protocols (good and bad), and what we have as a result of adding more and more functionality (complexity) to our protocols.
+I suppose you noticed that we haven't said a word about `extensions` here, although a lot of folks think they a necessary part of "Protocol-Oriented development" (I'm not among them). Here is the [next post dedicated to the protocol extensions](https://dmtopolog.com/protocol-extensions/).
