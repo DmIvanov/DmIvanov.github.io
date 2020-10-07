@@ -43,7 +43,7 @@ Stuffing several concepts in one language feature breaks the SRP. The feature ge
 
 By breaking SRP we increase the number of side effects. And in the case of language concepts, it means that one use case for the feature language can interfere with another.
 
-That's basically what happened with **inheritance**. We use one term (and one language concept) for two different things: _interface inheritance_ and _implementation inheritance_. When not separated in the language, they cause some troubles (if you are not familiar with the problem you can [find a lot of discussions in Google](https://www.google.com/search?q=inheritance+is+evil)). Developers mix one with another in the same data structure because it's so easy to do that. You might stick to the interface inheritance in your class and refuse to use the implementation one to keep your code clean. But one day you decide to override one of the methods in a subclass (not a big deal). Then you put instances of a superclass and subclasses into the same array (we like generic code, right?). But next day you already find yourself down-casting a superclass
+That's basically what happened with **inheritance**. We use one term (and one language concept) for two different things: _interface inheritance (subtyping)_ and _implementation inheritance (code inheritance)_. When not separated in the language, they cause some troubles (if you are not familiar with the problem you can [find a lot of discussions in Google](https://www.google.com/search?q=inheritance+is+evil)). Developers mix one with another in the same data structure because it's so easy to do that. You might stick to the interface inheritance in your class and refuse to use the implementation one to keep your code clean. But one day you decide to override one of the methods in a subclass (not a big deal). Then you put instances of a superclass and subclasses into the same array (we like generic code, right?). But next day you already find yourself down-casting a superclass
 
 ```swift
 for animal in animals {
@@ -52,23 +52,41 @@ for animal in animals {
     }
 }
 ```
-That's not where you want to be.
+That's not where you want to be. (It's not like down-casting is bad, but you might want to think about your design again if you have to do it).
 
 Back to protocols.
 
 We mentioned all the different responsibilities of protocols and protocol extensions in [Several faces of protocols](https://dmtopolog.com/protocol-faces/) and [Protocol extensions](https://dmtopolog.com/protocol-extensions/).
 
-It's easy to mix several roles in one single protocol. Let's say, you start with a simple dynamic interface. Then you find some common implementation patterns in types conforming to the protocol so you add an extension and put all this shared code into it (why to duplicate the implementation in different places). Then you put some additional functions to an extension that is not in the protocol at all (some free functionality, nice!). It's already quite a complicated piece of logic, but you may subclass a class which adopts this protocol, or inherit the protocol in another protocol, or even make another extension to this child protocol where you override some functions...
+It's easy to mix several roles in one single protocol. Let's say, you start with a simple dynamic interface. Then you find some common implementation patterns in types conforming to the protocol so you add an extension and put all this shared code into it (why duplicate the implementation in different places). Then you put some additional functions to an extension that is not in the protocol at all (some free functionality, nice!). It's already quite a complicated piece of logic, but you may subclass a class which adopts this protocol, or inherit the protocol in another protocol, or even make another extension to this child protocol where you override some functions...
 
 In these cases, you eventually have this Frankenstein monster with several responsibilities, quite a complex and even confusing logic, some hidden functionality. But the worst thing is your inability to change a small thing because it has side effects and breaks something else (related to a different responsibility of the object).
 
+You may ask:
+> What after all SRP has to do with side effects in protocols? What are "side effects" in the context of protocols?
+
+When the object has several responsibilities it has different pieces of internal logic responsible for different things. But as it's still one object you cannot fully separate these functional parts. These parts are connected, usually they have some shared state, or code, or i/o channels... and as far as there is something shared, you have a possibility for side effects. You change something related to one piece of functionality, but it also relates to something else (maybe something you don't expect).
+
+The simplest example regarding protocols may be when you have your protocol as a dynamic interface and use it in the heterogenous array. Then you start using the same protocol as a compile-time constraint. Then you want to add a self/associatedType requirement... and boom - you cannot do that...
+
 > Error: Protocol ‘YourProtocol’ can only be used as a generic constraint because it has Self or associated type requirements
 
-We already mentioned that this multi-concept situation is not good for readability either. Sometimes when looking at the specific protocol it's hard to tell what is its purpose. Would it really be more cognitive load to handle several different language features, then to handle the one, but with several flavours and separate use cases (which sometimes don't work along so well)?
+Here is your side effect. These two ways of using protocol don't get along with each other well. The compiler helps you here, and doesn't allow to get too much into mixing this protocol flavours (because it makes its - compiler's - job impossible). So you need to redesign your code to either use one or another. But in other cases (let's say mixing default implementation and additional functionality in protocol extension) compiler will not help you. The code compiles and works, but it's not so nice to maintain further.
 
-Wouldn't it be better to have different language tools for different use cases? Is it possible to split already released (and highly appreciated) language feature into several independent ones? In the case of protocols, I don't think it's possible at this stage of language development.
+We already mentioned that this multi-concept situation is not good for readability either. Sometimes when looking at the specific protocol it's hard to tell what is its purpose (is it used with an extension as a mixin, or as a generic constraint, or for the dynamic polymorphism?). Would it really be more cognitive load to handle several different language features, then to handle the one, but with several flavours and separate use cases (which sometimes don't work along so well)?
 
-I want to briefly remind you that such a "split" already happened in Swift history. Some of you might remember that before Swift 2.2 there were two different language features named 'typealias'. But then it was decided to separate them. That's how we got `associatedtype`. (You can brush up the memories [here](https://github.com/apple/swift-evolution/blob/master/proposals/0011-replace-typealias-associated.md))
+You may say:
+> Stop blaming the language if you just cannot use it properly.
+
+And that would be partly reasonable, but not entirely.
+
+If we are completely aware of all the possible ways of using the feature and all the subtle differences between them, if we can perfectly separate one from another and keep it in mind all the time we work with this code, if we don't make shortcuts and always write clean code... then yeah, there is nothing wrong with such swiss-army-knife features. But we are not that good.
+
+If we have a choice between making things quickly and making things properly sometimes we pick the first option (even the best of us... it's just the matter of frequency).
+
+But what if we wouldn't have such a possibility to screw things up? Wouldn't it be better to have different language tools for different use cases? Is it possible to split already released (and highly appreciated) language feature into several independent ones? In the case of protocols, I don't think it's possible at this stage of language development.
+
+But let me briefly remind you that such a "split" already happened in Swift history. Some of you might remember that before Swift 2.2 there were two different language features named 'typealias'. But then it was decided to separate them. That's how we got `associatedtype`. (You can brush up the memories [here](https://github.com/apple/swift-evolution/blob/master/proposals/0011-replace-typealias-associated.md))
 
 No doubt that protocols are much more massive in terms of compiler logic and usage in our code. It's also clear that what was possible in Swift 2 times might not feasible now. I'm just saying that sometimes this situation when several concepts appeared to be encapsulated in one feature it might be realized and fixed at some point.
 
