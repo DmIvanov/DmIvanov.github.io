@@ -16,6 +16,10 @@ tags:
 share: true
 
 ---
+UPD: (Jun 2021) Now it's build in in the language (Swift 5.5) [Swift evolution proposal (released)](https://github.com/apple/swift-evolution/blob/main/proposals/0295-codable-synthesis-for-enums-with-associated-values.md), so in most cases the compiler will do this for you.
+
+UPD: (Jan 2021) Just recently the discussion started again on the swift forum. If you are interested, follow [E-0295: Codable synthesis for enums with associated values](https://forums.swift.org/t/se-0295-codable-synthesis-for-enums-with-associated-values/42408). Hopefully it will be live in the language soon.
+
 Enumerations are not just first-class citizens in Swift. They adopt many features traditionally supported only by classes, such as computed properties or static and instance methods. Enumerations can also define custom initialisers, can be extended to expand their functionality beyond their original implementation, and can conform to protocols to provide standard functionality.
 
 Ability to have some associated data is one of the greatest enum features in Swift. (The notion itself has quite a long history in computer science and is being used in [other languages](https://en.wikipedia.org/wiki/Tagged_union). That means that you can define an enumeration to store some associated values of any type alongside the actual cases. Moreover the amount and the types of these values can differ from case to case.
