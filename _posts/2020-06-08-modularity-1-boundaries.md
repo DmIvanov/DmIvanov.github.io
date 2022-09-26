@@ -3,11 +3,11 @@ title: Modularity. Boundaries
 date: 2020-06-08
 author: topolog
 layout: post
-permalink: /modularity-1-boundaries/
+permalink: /modularity-1-boundaries
 image:
-  path: images-posts/2020-06-08-modularity-1-boundaries/fence-2000.jpg
-  thumbnail: images-posts/2020-06-08-modularity-1-boundaries/fence-600.jpg
-  caption: Photo by Krzysztof Walczak on Unsplash
+  path: images-posts/2020-06-08-modularity-1-boundaries/separation-1920.jpg
+  thumbnail: images-posts/2020-06-08-modularity-1-boundaries/separation-600.jpg
+  caption: Photo by Will Francis on Unsplash
 tags:
   - modules
   - iOS
@@ -21,8 +21,9 @@ share: true
 In this post we'll talk about why boundaries matter and what types of modularity can we distinguish in our projects based on the existing boundaries.
 
 This post is part of the series on modularity:
-- [**Modularity. Boundaries**](https://dmtopolog.com/modularity-1-boundaries/)
-- [Modularity. Encapsulation](https://dmtopolog.com/modularity-2-encapsulation/)
+- [**Modularity. Boundaries**](/modularity-1-boundaries)
+- [Modularity. Encapsulation](/modularity-2-encapsulation)
+- [Modularity. What problem does it solve?](/modularity-3-problems)
 
 &nbsp;
 

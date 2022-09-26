@@ -3,11 +3,11 @@ title: Modularity. Encapsulation
 date: 2020-08-03
 author: topolog
 layout: post
-permalink: /modularity-2-encapsulation/
+permalink: /modularity-2-encapsulation
 image:
-  path: images-posts/2020-08-03-modularity-2-encapsulation/separation-1920.jpg
-  thumbnail: images-posts/2020-08-03-modularity-2-encapsulation/separation-600.jpg
-  caption: Photo by Will Francis on Unsplash
+  path: images-posts/2020-08-03-modularity-2-encapsulation/fence-1920.jpg
+  thumbnail: images-posts/2020-08-03-modularity-2-encapsulation/fence-600.jpg
+  caption: Photo by Krzysztof Walczak on Unsplash
 tags:
   - modules
   - iOS
@@ -15,6 +15,7 @@ tags:
   - no code
 categories:
   - Tech Blog
+share: true
 ---
 
 What is this post about:
@@ -24,8 +25,9 @@ What is this post about:
 - what might be some possible challenges
 
 This post is part of the series on modularity:
-- [Modularity. Boundaries](https://dmtopolog.com/modularity-1-boundaries/)
-- [**Modularity. Encapsulation**](https://dmtopolog.com/modularity-2-encapsulation/)
+- [Modularity. Boundaries](/modularity-1-boundaries)
+- [**Modularity. Encapsulation**](/modularity-2-encapsulation)
+- [Modularity. What problem does it solve?](/modularity-3-problems)
 
 &nbsp;
 
