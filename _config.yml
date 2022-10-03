@@ -34,7 +34,7 @@ read_time: true
 future: true
 
 # Build settings
-theme: jekyll-theme-so-simple
+# theme: jekyll-theme-so-simple
 remote_theme: mmistakes/so-simple-theme
 
 plugins:
