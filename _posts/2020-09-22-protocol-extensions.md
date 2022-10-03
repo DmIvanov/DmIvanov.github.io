@@ -193,4 +193,4 @@ In practice it has some interesting consequences:
 
 ### To be continued
 
-Here we discussed what the animal is "protocol extensions". We mentioned 2 types of functions and the general differences between them. Next time we will dive more into practical cases and pitfalls regarding using this feature in our code. Stay tuned ;-).
+Here we discussed what the animal is "protocol extensions". We mentioned 2 types of functions and the general differences between them. In the [next article](/pitfalls-of-protocol-extensions/) we are diving more into practical cases and pitfalls regarding using this feature in our code. Stay tuned ;-).

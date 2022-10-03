@@ -20,9 +20,9 @@ excerpt: In previous posts we've mentioned all the different use cases for this 
 
 This post is basically a continuation of the topic started in the previous ones.
 
-In [Protocol Extensions](https://dmtopolog.com/protocol-extensions/) we've mentioned all the different use cases for this language feature. Now let's consider some hidden complications which we get together with all the power.
+In [Protocol Extensions](/protocol-extensions/) we've mentioned all the different use cases for this language feature. Now let's consider some hidden complications which we get together with all the power.
 
-First of all, most of the drawbacks of general swift extensions are fair here as well. (I discussed them in [Dark side of extensions in Swift](https://dmtopolog.com/dark-side-of-extensions/)).
+First of all, most of the drawbacks of general swift extensions are fair here as well. (I discussed them in [Dark side of extensions in Swift](/dark-side-of-extensions/)).
 
 But there are also some additional ones.
 

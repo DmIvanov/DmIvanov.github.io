@@ -111,15 +111,17 @@ On a high-level, modular project is more structured than the monolith. Module is
 
 Modules are independent projects (even when having dependencies from each other) so the scope for the work processes also decreases. We are talking about several small project instead of one big monolith, hence we have independent, much faster development loops (develop, test, release). We have smaller number of features and much less conflicts: now instead of 10 devs working on the same monolith we have 5 teams of 2 devs working each on independent module.
 
-*(More details about context separation, and modules as independent projects you can read [here](/modularity-2-encapsulation))*
+_(More details about context separation, and modules as independent projects you can read [here](/modularity-2-encapsulation))_
 
 We don't have problems with long compilation and lengthy test runs anymore, as all of these is specific to the module. (You still need to debug and test the integration code, but the amount of work decreases several fold).
 
-In big teams (when more than 4-6 devs work on one app) organizational structure normally changes together with the project. Modules work better when they have clear maintainers. So, the next logical step is to establish some feature teams with clear areas of responsibility.
+In big teams (when more than 4-6 devs work on one app) organizational structure normally changes together with the project. Modules work better when they have clear maintainers. So, the next logical step might be to establish some feature teams with clear areas of responsibility.
 
 No-brainer that because all of this the overall productivity and satisfaction increases because generally it just gets easier to work. The prerequisite-consequence connection here is quite straightforward.
 
 Regarding the reliability, reducing both the context and the connections between the parts of the app (and side effects as a result) changes the situation dramatically (in a good way of course =)). Code changes become easier to make and test, issues become easier to localize and debug.
+
+_(It was a high level overview of the benefits. In future posts I plan to talk more in details about each one of them: scalability, compilation, work processes etc. mentioning also the challenges that modularisation brings)_
 
 ## Bonus improvements
 
