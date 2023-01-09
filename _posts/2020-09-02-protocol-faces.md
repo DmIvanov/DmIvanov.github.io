@@ -21,6 +21,15 @@ share: true
 
 Let's try to look at them from a distance and understand what `language features` are masked by this simple word "Protocol" in Swift.
 
+
+---
+
+**UPD: (Nov 2022)** Now after the number of changes in Swift 5.6 and 5.7 something changed... See [Shift in the Protocol-paradigm](/protocol-paradigm-shift)
+
+---
+
+&nbsp;
+
 _(I don't want to overload you with the code examples here as there are plenty of them out there. But I need to illustrate some ideas with code (and I don't want to just copy-past somebody's examples... even if they are great ;-)).
 So let's consider some News Feed app that fetches and displays recent news as our playground.)_
 

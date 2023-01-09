@@ -19,9 +19,15 @@ excerpt: In previous posts we've mentioned all the different use cases for this 
 ---
 
 This post continues the ideas mentioned in the previous ones from this series:
-- [Protocol extensions](https://dmtopolog.com/protocol-extensions/)
-- [Several faces of protocols](https://dmtopolog.com/protocol-faces/)
-- [Pitfalls of protocol extensions](https://dmtopolog.com/pitfalls-of-protocol-extensions/)
+- [Protocol extensions](/protocol-extensions/)
+- [Several faces of protocols](/protocol-faces/)
+- [Pitfalls of protocol extensions](/pitfalls-of-protocol-extensions/)
+
+---
+
+**UPD: (Nov 2022)** Now after the number of changes in Swift 5.6 and 5.7 something changed... See [Shift in the Protocol-paradigm](/protocol-paradigm-shift)
+
+---
 
 The power of the protocols in Swift is their main weakness. There are too many use cases for protocols, they try to embrace too many different language features, **too many responsibilities**.
 
