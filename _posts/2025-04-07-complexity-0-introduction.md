@@ -18,7 +18,7 @@ categories:
 share: true
 ---
 
-This is the first part of the Complexity series. In this article we will touch upon what exactly **complexity** is, how can we measure it and why should we care about it at all.
+This is the introduction for the _Complexity series_ - a set of articles where we will explore the causes of complexity in our projects (not only related to the code) and the ways to minimise it. In this piece we will touch upon what exactly **complexity** is, how can we measure it and why should we care about it at all. In the 
 
 The topic is mostly relevant for ones who spend decent amount of work time reading and maintaining existing code. I know there are developers and teams who produce and ship projects without maintaining them afterward. For them the problem is not so relevant I believe.
 
