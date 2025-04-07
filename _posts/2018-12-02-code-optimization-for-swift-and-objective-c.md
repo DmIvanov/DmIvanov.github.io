@@ -280,37 +280,26 @@ There was my small journey started from the question about asserts and led me ri
 ### _Additional references:_
 
 _**Clang:**_
-<br>
-[_https://clang.llvm.org/docs/CommandGuide/clang.html#description_](https://clang.llvm.org/docs/CommandGuide/clang.html#description)
-<br>
-[_https://clang.llvm.org/docs/CommandGuide/clang.html#code-generation-options_](https://clang.llvm.org/docs/CommandGuide/clang.html#code-generation-options)
+- [Description (clang.llvm.org)](https://clang.llvm.org/docs/CommandGuide/clang.html#description)
+- [Code Generation Options (clang.llvm.org)](https://clang.llvm.org/docs/CommandGuide/clang.html#code-generation-options)
 
 _**LLVM:**_
-<br>
-[_Video: A Brief Introduction to LLVM_](https://youtu.be/a5-WaD8VV38)
-<br>
-[_Video: D. Dunbar “A New Architecture for Building Software”_](https://youtu.be/b_T-eCToX1I)
+- [Video: A Brief Introduction to LLVM](https://youtu.be/a5-WaD8VV38)
+- [Video: D. Dunbar “A New Architecture for Building Software”](https://youtu.be/b_T-eCToX1I)
 
 _**LLVM optimization:**_
-<br>
-<a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/MOSXAppProgrammingGuide/Performance/Performance.html"> https://developer.apple.com/library/archive/documentation/General/Conceptual/MOSXAppProgrammingGuide/Performance/Performance.html</a> (Compiler-Level Optimizations section)
-<br>
-<a href="https://pewpewthespells.com/blog/buildsettings.html#gcc_optimization_level"> https://pewpewthespells.com/blog/buildsettings.html#gcc_optimization_level</a> (Xcode Build Settings Reference)
+- [Compiler-Level Optimizations section (developer.apple.com)](https://developer.apple.com/library/archive/documentation/General/Conceptual/MOSXAppProgrammingGuide/Performance/Performance.html)
+- [Xcode Build Settings Reference (developer.apple.com)](https://pewpewthespells.com/blog/buildsettings.html#gcc_optimization_level)
 
 _**Swift compiler:**_
-<br>
-[_A brief overview at swift.org_](https://swift.org/swift-compiler/#compiler-architecture)
-<br>
-[_Swift Driver overview at modocache.io_](https://modocache.io/reading-and-understanding-the-swift-driver-source-code)
+- [A brief overview (swift.org)](https://swift.org/swift-compiler/#compiler-architecture)
+- [Swift Driver overview](https://modocache.io/reading-and-understanding-the-swift-driver-source-code)
+- [How a Swift file is compiled](https://trinhngocthuyen.com/posts/tech/how-a-swift-file-is-compiled/)
 
 _**Swift optimizations:**_
-<br>
-<a href="https://swift.org/blog/osize/"><em> https://swift.org/blog/osize/</em></a>
-<br>
-<a href="https://swift.org/blog/whole-module-optimizations/"><em> https://swift.org/blog/whole-module-optimizations/</em></a>
+- [osize (swift.org)](https://swift.org/blog/osize/)
+- [Whole module optimization (swift.org)](https://swift.org/blog/whole-module-optimizations/)
 
 _**SIL:**_
-<br>
-<a href="https://github.com/apple/swift/blob/master/docs/SIL.rst"><em> Documentation</em></a>
-<br>
-<a href="https://youtu.be/Ntj8ab-5cvE">Video: Joseph Groff & Chris Lattner Swift's High-Level IR</a>
+- [Documentation](https://github.com/apple/swift/blob/master/docs/SIL.rst)
+- [Video: Joseph Groff & Chris Lattner Swift's High-Level IR](https://youtu.be/Ntj8ab-5cvE)

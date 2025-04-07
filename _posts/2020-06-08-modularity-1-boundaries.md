@@ -13,6 +13,7 @@ tags:
   - iOS
   - architecture
   - no code
+  - platform-agnostic
 categories:
   - Tech Blog
 share: true
