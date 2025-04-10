@@ -1,12 +1,10 @@
 - title: Home
   url: /
-- title: Posts
+- title: Archive
   url: /posts/
 - title: Tags
   url: /tags/
-# - title: Categories
-#   url: /categories/
+- title: Talks
+  url: /talks/
 - title: About
   url: /about/
-# - title: Search
-#   url: /search/
