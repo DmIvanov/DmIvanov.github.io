@@ -1,6 +1,6 @@
 ---
 title:  Complexity part 2. Code and logic distribution.
-date: 2025-04-02
+date: 2025-04-21
 author: topolog
 layout: post
 permalink: /complexity-2-logic-code-disctribution
