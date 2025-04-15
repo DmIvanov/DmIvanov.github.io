@@ -58,6 +58,8 @@ What makes this even harder is that problems often evolve gradually. We may not 
 
 ### Consequences of a Mismatch
 
+![](/images-posts/2025-04-28-complexity-3-problem-solution-mismatch/cutting-with-spoon.png)
+
 Imagine you try to **use a spoon to cut** instead of a knife. Technically, it works — you can apply enough pressure and eventually get the job done. But it’s slow, awkward, and prone to mistakes. To make it more effective, you might start modifying the spoon, developing special techniques for using it, or building accessories to help stabilize what you're cutting.
 
 The more you try to improve the wrong tool, the more complexity you add. You end up with a mess of modifications, documentation, and rituals to support something that was never meant to do the job in the first place.
@@ -101,6 +103,8 @@ Misalignment doesn’t only affect individual pieces of logic — it can also af
 
 In modern development, we typically follow **Agile** methodologies. We start with a general idea and evolve the product incrementally, discovering the path as we go. This approach works well for products, but it also introduces a challenge: our architecture must adapt just as fluidly. If the system architecture is rigid or overly predetermined, it inevitably becomes **misaligned** with the evolving needs of the product.
 
-That’s why architecture needs to be agile too. It must be designed with **evolution in mind**. This doesn’t mean skipping structure altogether, but rather **building in flexibility**: making it modular, keeping boundaries clean, favoring composition over inheritance, isolating decisions that are likely to change, and avoiding premature generalization. 
+That’s why architecture needs to be agile too. It must be designed with **evolution in mind**. This doesn’t mean skipping structure altogether, but rather **building in flexibility**: making it modular, keeping boundaries clean, favoring composition over inheritance, isolating decisions that are likely to change, and avoiding premature generalization.
+
+![](/images-posts/2025-04-28-complexity-3-problem-solution-mismatch/agile-architecture.png)
 
 Whether it's called evolutionary architecture, emergent design, or just pragmatic refactoring — the principle is the same: **keep your architecture open to change**, so it can continue to match the problem it's meant to solve. This alignment is what keeps complexity from spiraling out of control as your app grows.
