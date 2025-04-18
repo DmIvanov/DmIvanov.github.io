@@ -1,6 +1,6 @@
 ---
 title: Complexity part 3. Problem-solution mismatch
-date: 2025-04-02
+date: 2025-04-28
 author: topolog
 layout: post
 permalink: /complexity-3-problem-solution-mismatch
