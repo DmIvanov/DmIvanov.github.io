@@ -214,6 +214,9 @@ This measures how many interfaces a class implements. While implementing interfa
 
 ### Why to bother measuring?
 
+All these metrics are based on static code analysis. That’s what the tools like SonarQube, Checkmarx, and SwiftLint use to assess code quality.
+Complexity in software development extends far beyond the code itself—we’ll explore that later. Still, poorly implemented abstract concepts will eventually lead to complex code, which we can measure using these techniques.
+
 ![](/images-posts/2025-04-07-complexity-0-introduction/measure-to-manage.png)
 
 There are arguments regarding the origin of this idea, but it doesn't really matter. Measuring doesn’t necessarily mean controlling, but it’s the first step toward it.

@@ -115,23 +115,23 @@ It's usually considered that when a function has more than two or three returns,
 ### Nesting level
 
 Nesting level is something we can fully control as developers.
-In the following example we have 3 levels of nested types: About This App Configuration, Entry, and Content.
+In the following example we have 3 levels of nested types: PaymentConfiguration, Entry, and Content.
 
 ```swift
-public struct AboutThisAppConfiguration {
+public struct PaymentConfiguration {
     
     public struct Entry {
         
         public enum Content {
-            case modal(AboutLegalEntryCoordinator)
-            case confirmedDeepLink(ConfirmationAlertPresenter)
+            case modal(PaymentContext)
+            case deepLink(DeepLinkContext)
         }
                 
         public let title: String
         public let content: Content
         
-        public init(title: String, icon: UIImage? = nil, content: Content,
-                    trackingIdentifier: String, accessibilityIdentifier: String) {
+        public init(title: String, 
+                    content: Content) {
             self.title = title
             self.content = content
         }
@@ -144,35 +144,35 @@ public struct AboutThisAppConfiguration {
     }
 }
 ```
-The cognitive load of such solution high as for each nested structure you need to keep the context of its parent (or even grandparent) in mind. You deal with the `Content`, but you will likely need to consider `Entry` and maybe even `AboutThisAppConfiguration` for the full context. The cognitive contexts of them overlap:
+The cognitive load of such solution high as for each nested structure you need to keep the context of its parent (or even grandparent) in mind. You deal with the `Content`, but you will likely need to consider `Entry` and maybe even `PaymentConfiguration` for the full context. The cognitive contexts of them overlap:
 
 ![](/images-posts/2025-04-14-complexity-1-decisions-in-code/context-overlap.png)
 
  So in this case it’s probably easier to split them into a separate data types, even if it looks more verbose in terms of naming.
 
 ```swift
-public struct AboutThisAppConfiguration {
+public struct PaymentConfiguration {
         
-    public let entries: [AboutThisAppConfigurationEntry]
-    public init(entries: [Entry]) {
+    public let entries: [PaymentConfigurationEntry]
+    public init(entries: [PaymentConfigurationEntry]) {
         self.entries = entries
     }
 }
 
-public struct AboutThisAppConfigurationEntry {
+public struct PaymentConfigurationEntry {
             
     public let title: String
-    public let content: AboutThisAppConfigurationEntryContent
-    public init(title: String, icon: UIImage? = nil, content: Content,
-                trackingIdentifier: String, accessibilityIdentifier: String) {
+    public let content: PaymentConfigurationEntryEntryContent
+    public init(title: String,
+                content: Content) {
         self.title = title
         self.content = content
     }
 }
 
-public enum AboutThisAppConfigurationEntryContent {
-    case modal(AboutLegalEntryCoordinator)
-    case confirmedDeepLink(ConfirmationAlertPresenter)
+public enum PaymentConfigurationEntryEntryContent {
+    case modal(PaymentContext)
+    case confirmedDeepLink(DeepLinkContext)
 }
 ```
 
@@ -194,8 +194,8 @@ public enum AccessibilityIdentifiers {
         
         public enum Legal {
             public static var view = "view"
-            public static var terms = "legalTermsconditionsEntry"
-            public static var copyrights = "legalCopyrightsEntry"
+            public static var terms = "legal"
+            public static var copyrights = "copyrights"
             
             public enum Copyrights {
                 public static var view = "view"
@@ -221,23 +221,23 @@ One way to address this is by grouping related parameters into meaningful data s
 _More complex:_
 
 ```swift
-public func trackFormStep(formId: String,
-                          formStep: String,
-                          formStatus: String,
-                          transactionId: String?,
-                          formOutcome: String?,
-                          formType: String?) {
+public func trackEvent(formId: String,
+                       formStep: String,
+                       formStatus: String,
+                       transactionId: String?,
+                       formOutcome: String?,
+                       formType: String?) {
     ...
 }
 ```
 _Less complex:_
 
 ```swift
-public func trackFormStep(content: FormStepTrackingContent) {
+public func trackEvent(content: EventContent) {
     ...
 }
     
-public struct FormStepTrackingContent: Equatable, Sendable {
+public struct EventContent: Equatable, Sendable {
     public let formId: String
     public let formStep: String
     public let formStatus: String
@@ -256,12 +256,11 @@ In other cases, if a function is doing too much and therefore needs too much con
 Complex conditions may be completely unreadable:
 
 ```swift
-if (featureToggles.toggle(for: .inAppReview) == .enabled &&
-    (numberOfLaunchesSinceLastPrompted >= 
-          configuration.minimumRequiredLaunches) ||
-    (dateProvider() >= nextPromptDate &&
-   applicationVersion != latestVersionPromptedForReview)) {
-    attemptToShowNativeRating(in: windowScene, completion: completion)
+if (yourFeatureToggleState == .enabled &&
+    (numberOfLaunches >= configuration.minimumRequiredLaunches) ||
+    (currentDate >= nextPromptDate &&
+    applicationVersion != latestVersionWithAlert)) {
+    attemptToShowAlert(in: window, completion: completion)
 }
 ```
 
@@ -269,11 +268,10 @@ A better approach: break them into logical steps, assign parts to descriptive bo
 
 
 ```swift
-let featureIsActive = featureToggles.toggle(for: .inAppReview) == .enabled
-let enoughLaunches = numberOfLaunchesSinceLastPrompted >= 
-configuration.minimumRequiredLaunches
-let dateVersionConditionMet = (dateProvider() >= nextPromptDate && 
-applicationVersion != latestVersionPromptedForReview)
+let featureIsActive = yourFeatureToggleState == .enabled
+let enoughLaunches = numberOfLaunches >= configuration.minimumRequiredLaunches
+let dateVersionConditionMet = (currentDate >= nextPromptDate &&
+    applicationVersion != latestVersionWithAlert)
 
 
 if featureIsActive && (enoughLaunches || dateVersionConditionMet) {
@@ -291,19 +289,19 @@ _More complex:_
 if cardIds.count > 1 {
     cardDismissHandler()
 } else {
-    if insightsWidgetViewController != nil {
+    if viewController != nil {
         cardDismissHandler()
     }
-    insightsWidgetCoordinatorDelegate?.dismissWidget(at: insightsLocation)
+    delegate?.dismissViewController(at: location)
 }
 ```
 _Less complex:_
 
 ```swift
-if cardIds.count > 1 || insightsWidgetViewController != nil {
+if cardIds.count > 1 || viewController != nil {
     cardDismissHandler()
 } else {
-    insightsWidgetCoordinatorDelegate?.dismissWidget(at: insightsLocation)
+    delegate?.dismissViewController(at: location)
 }
 ```
 
@@ -313,7 +311,7 @@ _More complex:_
 
 ```swift
 if let cardId {
-    if let element = interaction.element(for: insightsLocation,
+    if let element = interaction.element(for: location,
                                          cardId: cardId) else {
         return
     }
