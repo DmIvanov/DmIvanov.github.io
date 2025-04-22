@@ -34,13 +34,13 @@ The **Single Responsibility Principle (SRP)** takes this idea to a more granular
 
 In practice, we apply these principles at multiple levels of abstraction:
 
-- At the **app level**, we separate responsibilities across **feature modules** or **sections** of the app. For example, the onboarding flow, user profile, and checkout process might each live in their own isolated modules with clear ownership and dedicated navigation flows.
+- At the **app level**, we separate responsibilities across feature modules or sections of the app. For example, the onboarding flow, user profile, and checkout process might each live in their own isolated modules with clear ownership and dedicated navigation flows.
 
-- At the **functional layer**, we move responsibilities into dedicated roles:
-  - **View controllers** handle UI rendering and user interaction.
-  - **View models** manage presentation logic and data preparation.
-  - **Coordinators** (or flow controllers) control navigation and screen transitions.
-  - **Services** handle specific tasks like networking, analytics, persistence, or remote configuration.
+- At the **functional layer**, we move responsibilities into dedicated roles, for example:
+  - _View controllers_ to handle UI rendering and user interaction.
+  - _View models_ - to manage presentation logic and data preparation.
+  - _Coordinators_ (or flow controllers) - to control navigation and screen transitions.
+  - _Services_ - to handle specific tasks like networking, analytics, persistence, or remote configuration.
 
 - At the **function and data type level**, we apply SRP by avoiding bloated types and breaking down logic into focused pieces:
   - A function that parses and validates input might delegate formatting to a separate utility.
@@ -174,3 +174,7 @@ Our root function became much simpler, more straightforward and comprehensible.
 ![](/images-posts/2025-04-21-complexity-2-logic-code-disctribution/function-refactoring-11.png)
 
 We decomposed it, separated different level of abstractions, considered what belongs to each other and what doesn't and even thought about some possible future improvements. Now it's much easier to reason about this logic and if needed get deeper end explore the details.
+
+## Conclusion
+
+Thoughtful code and logic distribution is one of the most effective ways to manage complexity in software projects. It shapes how easily developers can understand, navigate, and evolve a system. When structure reflects responsibility, cohesion keeps related pieces close, and visibility is properly constrained, the codebase becomes less like a maze and more like a well-marked map. The clearer the layout, the less mental effort is needed to get things done — and the more confident we can be when making changes. In the long run, it's not just what the code does that matters, but how it's organized — because structure is what makes complexity sustainable.
