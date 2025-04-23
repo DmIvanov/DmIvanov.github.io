@@ -34,9 +34,13 @@ These models, like all abstractions, intentionally leave out some details to mak
 
 Let's say we work on a car simulation. We start with the simplest model: the car is just a point moving on a 1D grid. We don't need more for the beginning. Then we develop our module and add movement controls — acceleration, braking — and simulate inertia. Then we work on the UI: put it to a 2D-space and add size to our moving point. Later, we want to make it even closer to reality, so we add visual components: shape, color, orientation. Eventually, we might simulate full 3D physics, engine temperature, tire wear, or even fuel type. Each version of the simulation is a valid model of a car adjusted to a specific context. As the context evolves the model changes as well.
 
+![](/images-posts/2025-05-05-complexity-4-abstraction/drawing-batman.jpg)
+
 The art of abstraction lies in making two essential decisions: first, choosing the right context — understanding what question we’re trying to answer and how we intend to work with the abstraction; and second, deciding which details are important enough to include and which can be safely left out, based on that chosen context.
 
 When we get those two things right, abstraction reduces complexity. When we don’t, it often does the opposite.
+
+![](/images-posts/2025-05-05-complexity-4-abstraction/models-are-wrong.png)
 
 
 ## Common Abstraction Pitfalls
