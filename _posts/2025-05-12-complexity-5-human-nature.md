@@ -139,7 +139,7 @@ Sometimes, complexity isn’t introduced for technical reasons at all — but fo
 
 ## Personal Traits and Complexity
 
-Beyond cognitive biases and team dynamics, there’s another important factor influencing the complexity of our software — our individual personalities.
+Beyond the biases, there’s another important factor influencing the complexity of our solutions — our individual personalities.
 
 We all bring a unique mix of temperament, preferences, strengths, and fears to our work. These personal traits shape how we interpret problems, what kind of solutions we gravitate toward, and how we approach uncertainty. The result? Even with the same technical skills and constraints, two developers may solve the same problem in entirely different ways — with wildly different complexity profiles.
 
