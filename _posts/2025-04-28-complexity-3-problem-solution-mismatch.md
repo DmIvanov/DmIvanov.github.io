@@ -36,10 +36,10 @@ There are many ways a solution can become misaligned with the problem it’s sup
 
 ### Signs You Might Be Dealing with a Problem–Solution Discrepancy
 
-Recognizing the mismatch is the first step. Here are some signs:
+Recognizing the mismatch is the first step. Here are some examples:
 
 - **You have to frequently explain “why it’s done this way.”**  
-  If a design needs extensive documentation to justify itself, it might be too complicated for what it’s solving.
+  When working with some piece of logic you need to gather some additional context. The design needs extensive documentation to justify itself.
 
 - **You’re writing a lot of glue code, wrappers, or adapters.**  
   These often appear when the parts don’t naturally fit together — you're forcing compatibility where there isn’t any.
@@ -52,7 +52,7 @@ Recognizing the mismatch is the first step. Here are some signs:
 
 ## Why Recognizing Mismatch Is Hard
 
-Recognizing a mismatch isn’t always easy. We tend to be biased toward what already exists (more about the biases in the following articles). Refactoring feels risky, while patching feels quick and safe. Familiarity can also be misleading — just because we understand a tool doesn’t mean it fits the problem. In high-pressure environments, we often optimize for short-term speed, making it easier to move forward with a known (but imperfect) solution than to pause and reconsider.
+Recognizing a mismatch isn’t always easy. We tend to be biased toward what already exists (more about the biases in the following articles). Familiarity can be misleading — just because we understand a tool doesn’t mean it fits the problem. In high-pressure environments, we often optimize for short-term speed, making it easier to move forward with a known (but imperfect) solution than to pause and reconsider.
 
 What makes this even harder is that problems often evolve gradually. We may not notice how much the current solution has drifted away from what the problem really requires — until the weight of complexity becomes too heavy to ignore.
 
