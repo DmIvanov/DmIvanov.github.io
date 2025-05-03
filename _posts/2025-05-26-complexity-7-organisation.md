@@ -1,12 +1,12 @@
 ---
-title: Complexity part 6. Organisation.
-date: 2025-05-19
+title: Complexity part 7. Organisation.
+date: 2025-05-26
 author: topolog
 layout: post
-permalink: /complexity-6-organisation
+permalink: /complexity-7-organisation
 image:
-  path: images-posts/2025-05-19-ccomplexity-6-organisation/header.jpg
-  thumbnail: images-posts/2025-05-19-ccomplexity-6-organisation/thumb-600.jpg
+  path: images-posts/2025-05-26-complexity-7-organisation/header.jpg
+  thumbnail: images-posts/2025-05-26-complexity-7-organisation/thumb-600.jpg
   caption: Photo by <a href="https://unsplash.com/@enginakyurt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">engin akyurt</a> on <a href="https://unsplash.com/photos/a-blue-sign-on-a-beach-fpLoxANQt0A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
       
 tags:
