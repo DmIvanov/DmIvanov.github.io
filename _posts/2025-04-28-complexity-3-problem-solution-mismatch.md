@@ -12,6 +12,7 @@ tags:
   - architecture
   - complexity
   - platform-agnostic
+  - no code
 categories:
   - Tech Blog
 share: true

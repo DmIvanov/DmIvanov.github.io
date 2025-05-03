@@ -14,6 +14,7 @@ tags:
   - platform-agnostic
   - human-factor
   - psychology
+  - no code
 categories:
   - Tech Blog
 share: true
