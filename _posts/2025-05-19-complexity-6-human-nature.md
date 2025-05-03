@@ -1,12 +1,12 @@
 ---
-title: Complexity part 5. Human nature.
+title: Complexity part 6. Human nature.
 date: 2025-05-12
 author: topolog
 layout: post
-permalink: /complexity-5-human-nature
+permalink: /complexity-6-human-nature
 image:
-  path: images-posts/2025-05-12-complexity-5-human-nature/header.jpg
-  thumbnail: images-posts/2025-05-12-complexity-5-human-nature/thumb-600.jpg
+  path: images-posts/2025-05-19-complexity-6-human-nature/header.jpg
+  thumbnail: images-posts/2025-05-19-complexity-6-human-nature/thumb-600.jpg
   caption: Photo by <a href="https://unsplash.com/@kutyawka?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ekaterina Kuznetsova</a> on <a href="https://unsplash.com/photos/dummy-near-wall-GSoA6JYx2TQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
       
 tags:
