@@ -35,9 +35,12 @@ We design interfaces constantly, often without calling them that:
 
 Interfaces are everywhere — some explicit, some implicit — and they shape how we write, test, extend, and reason about our systems. More than just technical artifacts like signatures or schemas, interfaces are how we **hide complexity, enforce separation, and communicate intent**. The complexity of a system doesn’t just come from how it works internally — it comes from **how much of that internal mess others have to understand just to use it**. Interfaces are the lever that controls that experience. They’re where complexity either gets absorbed — or spills over. Every time we define or consume an interface, we’re not just connecting code — we’re shaping how people think.
 
+- **Interfaces determine coupling**  
+  Poorly abstracted interfaces often expose implementation details or force consumers to know too much. This tightens the coupling between systems and makes changes harder, riskier, and more expensive.
+
 - **Interfaces create abstraction boundaries**  
-  They draw the line between what’s inside and what’s outside. A good interface reduces mental load. A bad one forces you to think about too much at once.  
-  _([More on abstraction](https://dmtopolog.com/complexity-4-abstraction))_
+  They draw the line between what’s inside and what’s outside. A well-encapsulated interface reduces mental load and lets you work with a system without understanding its internals. A bad one forces you to think about too much at once.
+  _([More on abstraction](/complexity-4-abstraction))_
 
 - **Interfaces act as contracts**  
   They’re promises between parts of the system. The stronger and clearer the contract, the more confidently teams can work independently. Weak or unstable contracts breed uncertainty — and with it, defensive code, extra checks, and over-engineering.
@@ -47,12 +50,6 @@ Interfaces are everywhere — some explicit, some implicit — and they shape ho
 
 - **Interfaces shape how we use a system**  
   They guide interactions and encode design intent. Clear, consistent interfaces make code easier to use and extend. Confusing ones lead to workarounds, forks, and rewrites.
-
-- **Interfaces define the scope of reasoning**  
-  A well-encapsulated interface lets you work with a system without understanding its internals. If you constantly need to peek inside to know how to use it, the interface isn’t doing its job.
-
-- **Interfaces determine coupling**  
-  When an interface leaks implementation details, it increases coupling. Tightly coupled systems are harder to change and more fragile over time.
 
 
 ## What Makes an Interface Good or Bad?
@@ -79,8 +76,8 @@ Here are some key properties that distinguish good interfaces from bad ones, alo
 **Bad interfaces** leak internal details or expose too many options “just in case,” increasing cognitive load and coupling.
 
 > 🧩 *Example:*
-> - ✅ `UserService.fetchProfile(for id: UserID)`
-> - ❌ `UserRepository.load(with options: [String: Any], source: DataSourceType, cachePolicy: CacheLevel)`
+> - ✅ `analytics.track(event: .productViewed(page: .productPage, id: “123”))`
+> - ❌ `analytics.log(name: String, properties: [String: Any], sendImmediately: Bool)`
 
 
 ### 3. **Consistency vs. Surprise**
@@ -90,8 +87,19 @@ Here are some key properties that distinguish good interfaces from bad ones, alo
 **Bad interfaces** break expectations, introduce some unintended side effects.
 
 > 🧩 *Example:*
-> - ✅ A `get()` method that performs a read-only fetch.
-> - ❌ A `get()` method that also modifies internal state or triggers side effects.
+> - ✅ Consistency across the similar functional objects
+```swift
+let loginViewController = loginCoordinator.start()
+let productsViewController = productsCoordinator.start()
+let profileViewController = profileCoordinator.start()
+```
+> - ❌ Various design patterns across the similar objects
+```swift
+loginRouter.goToPasswordReset()
+products.startFlow(in viewController: parentViewController,
+                    options: [.modalPresentationStyle(.fullScreen)])
+let profileViewController = profileCoordinator.start()
+```
 
 
 ### 4. **Stability vs. Volatility**
@@ -105,29 +113,7 @@ Here are some key properties that distinguish good interfaces from bad ones, alo
 > - ❌ A shared protocol that changes weekly, breaking multiple modules downstream.
 
 
-### 5. **Focused Responsibility vs. Overgeneralization**
-
-**Good interfaces** do one thing well. They’re easy to explain in a sentence.
-
-**Bad interfaces** try to be everything to everyone — and end up doing none of it cleanly.
-
-> 🧩 *Example:*
-> - ✅ `AnalyticsService.track(event:)`
-> - ❌ `CoreSystemManager.handleEventAndState(for user: SessionContext?)`
-
-
-### 6. **Ease of Use vs. Defensive Usage**
-
-**Good interfaces** guide the user toward correct usage. They make the easy thing the right thing.
-
-**Bad interfaces** require defensive code, special flags, or knowledge of edge cases to avoid misuse.
-
-> 🧩 *Example:*
-> - ✅ `ImageLoader.load(from: URL, placeholder: UIImage?)`
-> - ❌ `ImageHandler(action: .fetch, config: [:], callback: ((Result<Any, Error>) -> Void)?)`
-
-
-### 7. **Encapsulation vs. Leakage**
+### 5. **Encapsulation vs. Leakage**
 
 **Good interfaces** hide complexity behind a clean surface.
 
@@ -138,7 +124,7 @@ Here are some key properties that distinguish good interfaces from bad ones, alo
 > - ❌ `Session.prepare(userContext: UserContext, cache: CacheStore, options: [String: Any])`
 
 
-### 8. **Context-Appropriate vs. Internally Driven**
+### 6. **Context-Appropriate vs. Internally Driven**
 
 **Good interfaces** reflect the mental model of the consumer. They speak the language of the problem domain, not the internal implementation.
 
@@ -148,6 +134,21 @@ Here are some key properties that distinguish good interfaces from bad ones, alo
 > - ✅ `Cart.totalPrice(in currency: CurrencyCode)`
 > - ❌ `Cart.getAmounts(applyTax: Bool, applyDiscount: Bool, useCachedRate: Bool)`
 
+
+### 7. **Focused Responsibility vs. Overgeneralization**
+
+**Good interfaces** do one thing well. They’re easy to explain in a sentence.
+
+**Bad interfaces** try to be everything to everyone — and end up doing none of it cleanly.
+
+
+### 8. **Ease of Use vs. Defensive Usage**
+
+**Good interfaces** guide the user toward correct usage. They make the easy thing the right thing.
+
+**Bad interfaces** require defensive code, special flags, or knowledge of edge cases to avoid misuse.
+
+---
 
 Good interfaces make code easier to read, use, change, and test. They absorb complexity — so it doesn’t spread. Bad interfaces do the opposite: they force complexity outward, making every consumer deal with it.
 
@@ -167,14 +168,11 @@ Interfaces are one of the most powerful tools we have for managing complexity �
 - **Separate concerns**  
   Avoid multipurpose interfaces. Each interface should have a focused responsibility — doing one thing well. Separation enables reuse without unintended coupling.
 
-- **Make them self-documenting**  
-  Choose clear, intention-revealing names, types, and constraints so the interface explains itself at a glance. The best interfaces require minimal external documentation to understand.
-
 - **Invest in documentation**  
-  Self-documentation helps, but it’s not enough — especially for shared or public interfaces. Clarify not just *what* the interface does, but *why* it exists and how it should be used.
+  Choose clear, intention-revealing names, types, and constraints so the interface explains itself at a glance. Self-documentation helps, but it’s not enough — especially for shared or public interfaces. Clarify not just *what* the interface does, but *why* it exists and how it should be used.
 
 - **Design for evolution**  
-  Interfaces tend to stick around. Design them with future growth in mind. Use techniques like optional parameters, clear versioning, and compatibility layers to support change without disruption.
+  Interfaces tend to stick around. Design them with future growth in mind. Use techniques like deprecation, optional parameters, clear versioning, and compatibility layers to support change without disruption.
 
 - **Use deep, not shallow modules**  
   Favor interfaces that offer high value with minimal surface area. A deep module hides complexity behind a simple API (e.g., a `start()` method that kicks off an entire flow), while a shallow one forces the consumer to manage internals themselves.
@@ -184,9 +182,6 @@ Interfaces are one of the most powerful tools we have for managing complexity �
 
 - **Stabilize contracts**  
   Once an interface is shared — especially across teams or services — treat it like a contract. Changing it carelessly creates ripple effects that increase complexity everywhere it’s used.
-
-- **Hide internal complexity**  
-  Push the messy logic behind the interface. The more implementation details you can abstract away, the simpler it is for consumers to use the interface correctly and confidently.
 
 - **Design for the consumer, not the implementation**  
   Structure the interface around how people use it — not how the system stores or calculates data. Consider the consumer’s mental model, what they know, and what will make their job easiest.
