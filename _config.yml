@@ -88,7 +88,7 @@ defaults:
       share: true
   # Recipe defaults
   - scope:
-      path: "_talks"
-      type: talks
+      path: "_topics"
+      type: topics
     values:
       layout: page

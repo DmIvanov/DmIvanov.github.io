@@ -1,11 +1,11 @@
 ---
-title: Talks
+title: Topics
 layout: collection
-permalink: /talks/
-collection: talks
+permalink: /topics/
+collection: topics
 entries_layout: list
 sort_by: title # date
 sort_order: forward # reverse
 ---
 
-My talks:
+My topics:
