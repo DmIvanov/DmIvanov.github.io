@@ -1,6 +1,6 @@
 ---
 title: Complexity part 6. Human nature.
-date: 2025-05-12
+date: 2025-05-19
 author: topolog
 layout: post
 permalink: /complexity-6-human-nature
