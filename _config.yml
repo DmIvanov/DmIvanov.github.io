@@ -73,7 +73,7 @@ footer_links:
 
 # Collections
 collections:
-  talks:
+  topics:
     output: true
     permalink: /:collection/:path/
 
