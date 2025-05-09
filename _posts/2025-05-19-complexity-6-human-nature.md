@@ -26,7 +26,9 @@ When we talk about complexity in software, we often focus on technical causes �
 
 The entire topic of complexity in software ultimately stems from a fundamental truth: our cognitive capacity is limited.
 
-Our working memory can only hold a small number of items at once — a constraint famously known as the 7±2 rule. Because of this, we’re forced to organize code in ways that reduce the number of things we have to think about at the same time. That’s why we spend so much time discussing how to design our modules, structure abstractions, and align the level of detail with the context in which the code is used. (We’ve explored these topics in earlier chapters — [see here](#) for a deeper dive.)
+Our working memory can only hold a small number of items at once — a constraint famously known as the 7±2 rule. (_We've shared more on that in the [introduction to this topic](/complexity-0-introduction)_)
+
+Because of this, we’re forced to organize code in ways that reduce the number of things we have to think about at the same time. That’s why we spend so much time discussing how to design our modules, structure abstractions, and align the level of detail with the context in which the code is used. (_We’ve explored these topics in earlier chapters: [part 1](/complexity-1-decisions-in-code), [part 2](/complexity-2-logic-code-disctribution), [part 3](/complexity-3-problem-solution-mismatch), [part 4](/complexity-4-abstraction), [part 5](/complexity-5-interfaces), check them out for a deeper dive._)
 
 But memory limitations are only one part of the story. There are several other traits of human cognition that shape how we write and experience code:
 
@@ -57,6 +59,8 @@ Even the clearest code becomes hard to work with when we’re tired, stressed, o
 All human beings are biased. We don’t perceive the world exactly as it is — we filter it through years of experience, instinct, and evolved mental shortcuts. These shortcuts, known as **cognitive biases**, help us make decisions quickly and efficiently, especially under uncertainty. They evolved to help our ancestors survive — to avoid danger, spot opportunities, and act fast when time mattered most.
 
 In many real-world situations, these instincts are helpful. They allow us to judge quickly, act decisively, and reduce decision fatigue. But in software development — where the problems are abstract, the consequences delayed, and the systems complex — these same instincts can easily mislead us.
+
+![](/images-posts/2025-05-19-complexity-6-human-nature/cognitive-biases.png)
 
 Books like *Thinking, Fast and Slow* by Daniel Kahneman and *Predictably Irrational* by Dan Ariely explore the nature of these biases in depth, revealing just how irrational even our most "logical" thinking can be. Let’s look at a few common cognitive biases and how they influence the decisions we make in our work — often adding accidental complexity to our systems.
 
