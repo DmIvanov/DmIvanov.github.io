@@ -114,6 +114,10 @@ Our brains are wired to spot patterns — it's how we learn. But sometimes we se
 
 For instance, seeing that two features share a similar flow, we abstract their logic into a shared module. But small differences begin to emerge — and soon the abstraction becomes a tangle of conditionals trying to accommodate both. What started as an effort to simplify ends up more complex than the originals.
 
+![](/images-posts/2025-05-19-complexity-6-human-nature/subjective-reality-original.jpg)
+
+Biases shape our subjective reality, influencing our decision-making and problem-solving processes. Ultimately, they can lead us to incorrect understanding of the situation, wrong conclusions resulting in solutions that fail to fully address the problem and instead introduce unnecessary complexity.
+
 ---
 
 ## Developers’ Specifics: When Complexity Becomes a Temptation
