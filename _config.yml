@@ -49,22 +49,11 @@ remote_theme: mmistakes/so-simple-theme
 
 plugins:
   - jekyll-feed
-  - jekyll-archives
   - jekyll-seo-tag
 
 author: topolog
 
 tag_archive_path: "/tags/#"
-
-jekyll-archives:
-  enabled: []
-  layout: archive
-  permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    day: '/:year/:month/:day/'
-    tag: '/tag/:name/'
-    category: '/category/:name/'
 
 # Footer Links
 footer_links:
