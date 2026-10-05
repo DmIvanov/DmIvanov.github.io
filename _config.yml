@@ -21,7 +21,7 @@
 title: topolog's tech blog
 description: Things your mom didn't tell you about iOS
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://dmtopolog.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://dmtopolog.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: dmtopolog
 github_username:  DmIvanov
 google_analytics: G-4ZH7L554HT

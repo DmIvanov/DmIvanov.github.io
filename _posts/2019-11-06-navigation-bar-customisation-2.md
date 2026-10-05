@@ -16,7 +16,7 @@ share: true
 
 Navigation bar customisation is quite a trivial task, but even before iOS 13 you could approach it in couple of different ways. This year another API has appeared. The new way suppose to replace the old ones and solve the issues which were not addressed by Apple so far. Let's see how it fits into the toolset that is in our disposal.
 
-In [a previous post of this series](http://www.dmtopolog.com/navigation-bar-customization/) we mentioned the basics of navigation bar customisation. But just you implementing this code is just a half of a deal. Another thing is how to properly structure it. How to encapsulate the code so all the customisation happens in one place, it's easy to reuse it and it's flexible in case of changes and restyling.
+In [a previous post of this series](/navigation-bar-customization/) we mentioned the basics of navigation bar customisation. But just you implementing this code is just a half of a deal. Another thing is how to properly structure it. How to encapsulate the code so all the customisation happens in one place, it's easy to reuse it and it's flexible in case of changes and restyling.
 
 Let's see what are the different approaches here.
 
@@ -220,7 +220,7 @@ As a result while we set some properties via UIAppearance in the project we cann
 
 ### P.S. Navigation bar shadow
 
-That's just a poor victim of Apple's API changes. I already mentioned [in part 1](http://www.dmtopolog.com/navigation-bar-customization/) the differences in adjusting the shadow before/after iOS 11. In iOS 13 it changed again: not only new appearances were given to us, but also an opportunity to set just a colour to the shadow.
+That's just a poor victim of Apple's API changes. I already mentioned [in part 1](/navigation-bar-customization/) the differences in adjusting the shadow before/after iOS 11. In iOS 13 it changed again: not only new appearances were given to us, but also an opportunity to set just a colour to the shadow.
 
 And just for fun: if you have code to switch on/off the shadow on your navigation bar and you support iOS versions 10, 11, 12 and 13 your code will look something like this:
 
