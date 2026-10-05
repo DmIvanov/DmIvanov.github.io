@@ -38,6 +38,7 @@ future: true
 exclude:
   - CLAUDE.md
   - TODO.md
+  - images-future   # unused stock pictures kept for future posts
   - Gemfile
   - Gemfile.lock
   - node_modules
