@@ -4,6 +4,8 @@ date: 2025-04-21
 author: topolog
 layout: post
 permalink: /complexity-2-logic-code-disctribution
+redirect_from:
+  - /complexity-2-logic-code-distribution  # correctly spelled alias of the original (typo'd) URL
 image:
   path: images-posts/2025-04-21-complexity-2-logic-code-disctribution/nails-1920x620.png
   thumbnail: images-posts/2025-04-21-complexity-2-logic-code-disctribution/nails-600.png

@@ -51,6 +51,10 @@ remote_theme: mmistakes/so-simple-theme
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-redirect-from
+
+redirect_from:
+  json: false   # don't publish redirects.json
 
 author: topolog
 

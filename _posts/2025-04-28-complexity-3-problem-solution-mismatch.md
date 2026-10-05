@@ -1,5 +1,5 @@
 ---
-title: Complexity part 3. Problem-solution mismatch
+title: Complexity part 3. Problem-solution mismatch.
 date: 2025-04-28
 author: topolog
 layout: post

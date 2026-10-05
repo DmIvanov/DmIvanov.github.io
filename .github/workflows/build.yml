@@ -1,0 +1,27 @@
+# Builds the site on every pull request (and on pushes to master) so broken
+# Liquid, YAML or Markdown is caught before merging. Deployment itself is still
+# done by GitHub Pages; this workflow only checks that the site builds.
+name: Build site
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"   # same minor version as GitHub Pages (https://pages.github.com/versions/)
+          bundler-cache: true   # runs `bundle install` and caches the gems
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --strict_front_matter
+        env:
+          JEKYLL_ENV: production
