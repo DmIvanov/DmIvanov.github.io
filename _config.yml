@@ -31,7 +31,7 @@ google_analytics: G-4ZH7L554HT
 # paginate: 20
 # paginate_path: /page:num/
 read_time: true
-future: true
+future: false
 
 # Files that should not be processed or published
 # (setting `exclude` replaces Jekyll's defaults, so they are listed here too)
