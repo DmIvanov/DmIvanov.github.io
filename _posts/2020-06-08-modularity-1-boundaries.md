@@ -9,11 +9,12 @@ image:
   thumbnail: images-posts/2020-06-08-modularity-1-boundaries/separation-600.jpg
   caption: Photo by Will Francis on Unsplash
 tags:
-  - modules
+  - modularity
   - iOS
   - architecture
   - no code
   - platform-agnostic
+  - interfaces
 categories:
   - Tech Blog
 share: true

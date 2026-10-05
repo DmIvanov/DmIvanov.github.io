@@ -12,6 +12,8 @@ tags:
   - iOS
   - swift
   - extensions
+  - language feature
+  - SOLID
 categories:
   - Tech Blog
 share: true

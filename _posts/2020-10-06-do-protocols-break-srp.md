@@ -12,6 +12,7 @@ tags:
   - swift
   - protocols
   - patterns
+  - SOLID
 categories:
   - Tech Blog
 share: true

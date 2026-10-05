@@ -15,6 +15,7 @@ tags:
   - human-factor
   - psychology
   - no code
+  - cognitive load
 categories:
   - Tech Blog
 share: true

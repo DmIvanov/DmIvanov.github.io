@@ -13,6 +13,8 @@ tags:
   - complexity
   - platform-agnostic
   - code
+  - clean code
+  - cognitive load
 categories:
   - Tech Blog
 share: true

@@ -13,6 +13,7 @@ tags:
   - no code
   - complexity
   - platform-agnostic
+  - cognitive load
 categories:
   - Tech Blog
 share: true

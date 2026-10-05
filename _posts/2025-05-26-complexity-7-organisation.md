@@ -14,6 +14,8 @@ tags:
   - platform-agnostic
   - organisation
   - no code
+  - requirements
+  - teamwork
 categories:
   - Tech Blog
 share: true

@@ -13,6 +13,7 @@ tags:
   - complexity
   - platform-agnostic
   - no code
+  - abstraction
 categories:
   - Tech Blog
 share: true

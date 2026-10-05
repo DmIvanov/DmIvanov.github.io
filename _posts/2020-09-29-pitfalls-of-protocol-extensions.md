@@ -12,6 +12,7 @@ tags:
   - swift
   - protocols
   - extensions
+  - testing
 categories:
   - Tech Blog
 share: true

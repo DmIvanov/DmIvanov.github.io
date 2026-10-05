@@ -11,7 +11,9 @@ tags:
   - iOS
   - swift
   - protocols
-  - obj-c
+  - Objective-C
+  - generics
+  - polymorphism
 categories:
   - Tech Blog
 share: true

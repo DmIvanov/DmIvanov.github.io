@@ -13,6 +13,7 @@ tags:
   - serialization
   - swift
   - language feature
+  - Codable
 share: true
 
 ---

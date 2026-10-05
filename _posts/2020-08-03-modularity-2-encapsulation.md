@@ -9,11 +9,12 @@ image:
   thumbnail: images-posts/2020-08-03-modularity-2-encapsulation/fence-600.jpg
   caption: Photo by Krzysztof Walczak on Unsplash
 tags:
-  - modules
+  - modularity
   - iOS
   - architecture
   - no code
   - platform-agnostic
+  - interfaces
 categories:
   - Tech Blog
 share: true

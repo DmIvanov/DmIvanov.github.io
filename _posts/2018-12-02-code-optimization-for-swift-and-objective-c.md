@@ -14,6 +14,9 @@ tags:
   - build process
   - compiler
   - iOS
+  - swift
+  - Objective-C
+  - performance
 share: true
 
 ---

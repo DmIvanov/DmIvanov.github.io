@@ -11,6 +11,9 @@ tags:
   - iOS
   - Siri
   - tips
+  - Xcode
+  - Objective-C
+  - app extension
 ---
 Let’s say, you decided to implement a new platform feature in your app. You read the documentation, checked some tutorials and examples in the internet, you created a sample app and everything worked great. Then you started to integrate it into your existing production app, and here came all the fun.
 

@@ -13,6 +13,8 @@ tags:
   - iOS
   - patterns
   - thoughts
+  - MVC
+  - no code
 share: true
 
 ---

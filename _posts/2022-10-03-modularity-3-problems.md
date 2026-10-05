@@ -9,11 +9,12 @@ image:
   thumbnail: images-posts/2022-10-03-modularity-3-problems/nails-600.jpg
   caption: Photo by topolog
 tags:
-  - modules
+  - modularity
   - iOS
   - architecture
   - no code
   - platform-agnostic
+  - build process
 categories:
   - Tech Blog
 share: true

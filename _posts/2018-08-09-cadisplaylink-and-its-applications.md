@@ -11,6 +11,8 @@ tags:
   - animation
   - iOS
   - UI/UX
+  - swift
+  - Core Animation
 share: true
 ---
 

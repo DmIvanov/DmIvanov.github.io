@@ -12,6 +12,9 @@ tags:
   - iOS
   - swift
   - protocols
+  - language feature
+  - polymorphism
+  - generics
 categories:
   - Tech Blog
 share: true

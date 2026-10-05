@@ -12,6 +12,7 @@ tags:
   - architecture
   - thoughts
   - no code
+  - Objective-C
 share: true
 ---
 

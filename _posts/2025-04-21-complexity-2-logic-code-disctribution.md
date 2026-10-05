@@ -13,6 +13,8 @@ tags:
   - complexity
   - platform-agnostic
   - code
+  - SOLID
+  - modularity
 categories:
   - Tech Blog
 share: true

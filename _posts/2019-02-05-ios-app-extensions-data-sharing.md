@@ -11,6 +11,8 @@ tags:
   - app extension
   - data sharing
   - iOS
+  - swift
+  - data storing
 share: true
 ---
 

@@ -11,6 +11,8 @@ image:
 tags:
   - HealthKit
   - iOS
+  - swift
+  - data sync
 share: true
 
 ---

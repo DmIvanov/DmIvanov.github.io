@@ -10,8 +10,10 @@ image:
   caption: Photo by Puneeth Shetty on Unsplash
 tags:
   - data storing
-  - CoreData
+  - Core Data
   - iOS
+  - performance
+  - concurrency
 share: true
 
 ---
