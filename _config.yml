@@ -24,7 +24,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://dmtopolog.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: dmtopolog
 github_username:  DmIvanov
-google_analytics: UA-127243344-1
+google_analytics: G-4ZH7L554HT
 
 # logo: /images/logo.jpg
 
