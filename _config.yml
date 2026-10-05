@@ -33,6 +33,16 @@ google_analytics: UA-127243344-1
 read_time: true
 future: true
 
+# Files that should not be processed or published
+# (setting `exclude` replaces Jekyll's defaults, so they are listed here too)
+exclude:
+  - CLAUDE.md
+  - TODO.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
 # Build settings
 # theme: jekyll-theme-so-simple
 remote_theme: mmistakes/so-simple-theme
