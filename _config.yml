@@ -62,9 +62,9 @@ tag_archive_path: "/tags/#"
 
 # Footer Links
 footer_links:
-  - title: Twitter
-    url: https://twitter.com/dmtopolog
-    icon: fab fa-twitter-square
+  - title: X
+    url: https://x.com/dmtopolog
+    icon: icon-x-square   # custom icon (Font Awesome 5.0 has no X logo), see _includes/head-custom.html
   - title: GitHub
     url: https://github.com/dmivanov
     icon: fab fa-github-square

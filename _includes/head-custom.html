@@ -1,1 +1,23 @@
 <link rel="shortcut icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+<style>
+  /* X (formerly Twitter) icons. The theme's Font Awesome 5.0 has no X logo, so these are drawn with an
+     inline SVG mask and take the surrounding text colour, like the other icons. */
+  .icon-x, .icon-x-square {
+    display: inline-block;
+    height: 1em;
+    vertical-align: -0.125em;
+    background-color: currentColor;
+    -webkit-mask: var(--icon) no-repeat center / contain;
+    mask: var(--icon) no-repeat center / contain;
+  }
+  .icon-x {
+    width: 1.25em; /* same box as Font Awesome's fixed-width (fa-fw) icons */
+    --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/%3E%3C/svg%3E");
+  }
+  .icon-x-square {
+    width: 0.875em; /* same proportions as Font Awesome's square brand icons */
+    --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cmask id='m'%3E%3Crect x='0' y='32' width='448' height='448' rx='48' fill='white'/%3E%3Cpath transform='translate(104 136) scale(10)' fill='black' d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/%3E%3C/mask%3E%3Crect x='0' y='32' width='448' height='448' rx='48' fill='white' mask='url(%23m)'/%3E%3C/svg%3E");
+  }
+  .btn--x { background-color: #000; color: #fff; }
+  .btn--x:hover { background-color: #333; color: #fff; }
+</style>
